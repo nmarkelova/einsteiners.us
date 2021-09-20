@@ -1,0 +1,28 @@
+{
+  "name": "Свебикс, студия веб-решений",
+  "short_name": "Свебикс",
+  "description": "Создание и продвежение веб-проектов. Свебикс, студия веб-решений",
+  "lang": "ru-RU",
+  "start_url": "/",
+  "Scope":"/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#00AEEF",
+  "background_color": "#FFFFFF",
+  "dir": "ltr",
+  "screenshots":[],
+  "icons": [
+    {
+      "src": "/images/icon/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

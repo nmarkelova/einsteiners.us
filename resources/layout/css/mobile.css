@@ -1,0 +1,54 @@
+/* ========================================================================
+Part: Mobile
+========================================================================== */
+.uk-header-mobile {
+    background: #FFF;
+    padding: 10px 0px;
+}
+.uk-header-mobile .uk-logo {
+    text-align: center;
+}
+.uk-header-mobile .uk-logo img {
+    max-width: 100px;
+}
+.uk-header-mobile .uk-button {
+    color: var(--base);
+    background: transparent;
+}
+.uk-header-mobile .uk-logo a {
+    display: flex;
+    justify-content: center;
+    max-height: 85px;
+}
+/* ========================================================================
+Component: Breadcrumb
+========================================================================== */
+.uk-panel-breadcrumb {
+    padding: 10px 45px 10px 10px;
+    display: inline-block;
+    margin: 0;
+    border-radius: 0px;
+    background: #FFF;
+}
+.uk-panel-breadcrumb .uk-alert-close {
+    top: calc(50% - 7px);
+}
+.uk-slader-breadcrumb {
+	width: calc(100% - 10px);
+}
+.uk-slader-breadcrumb .uk-slider-items > :nth-child(n+2):not(.uk-first-column)::before {
+    content: "/";
+    display: inline-block;
+    margin: 0 20px;
+    color: 
+    #999;
+}
+.uk-slader-breadcrumb .uk-slider-items > li > span {
+	color: var(--base);
+}
+/* ========================================================================
+Component: Breadcrumb
+========================================================================== */
+/* ========================================================================
+Part: Mobile
+========================================================================== */
