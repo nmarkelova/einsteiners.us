@@ -15,7 +15,7 @@ use Livewire\Component;
 class Search extends Component
 {
     public $searchEvents, $searchCity;
-    public $events, $activities;
+    public $user, $events, $activities;
     public $countries, $cities, $countrie_id, $citie_id;
     public $selectedCountry = false;
     public $searchResult = false;
@@ -48,26 +48,19 @@ class Search extends Component
             'searchEvents' => 'required|min:2',
         ]);
 
-        //$searchinput = '%' . $this->searchEvents . '%';
-        //$this->events = Event::all();
-        //$this->activities = Activitie::all();
-        //$this->events = DB::table('events')->where('name', 'like', $this->searchEvents )->get();
-        //$this->activities = DB::table('activities')->where('name', 'like', $this->searchEvents )->get();
-        $this->events = Event::where('name', 'like', '%' . $this->searchEvents . '%')->get();
-        $this->activities = Activitie::where('name', 'like', '%' . $this->searchEvents . '%')->get();
-        /*
-        $this->events = Event::whereHas('comments', function($q)
-        {
-            $q->where('name', 'like', $this->searchEvents);
+        $this->user = User::where('name', 'like', '%' . $this->searchEvents . '%')->get();
+        $autor = User::where('name', 'like', '%' . $this->searchEvents . '%')->get();
 
-        })->get();
+        if(count($this->user) == 0) {
+            $this->events = Event::where('name', 'like', '%' . $this->searchEvents . '%')->get();
+            $this->activities = Activitie::where('name', 'like', '%' . $this->searchEvents . '%')->get();
+        } else {
+            $array_autor = (array) $autor[0];
+            $result_autor = $array_autor["\x00*\x00attributes"]["id"];
+            $this->events = Event::where('user_id', 'like', '%' . $result_autor . '%')->get();
+            $this->activities = Activitie::where('user_id', 'like', '%' . $result_autor . '%')->get();
+        }
 
-        $this->activities = Activitie::whereHas('comments', function($q)
-        {
-            $q->where('name', 'like', $this->searchEvents);
-
-        })->get();
-        */
         $this->searchResult = true;
     }
 

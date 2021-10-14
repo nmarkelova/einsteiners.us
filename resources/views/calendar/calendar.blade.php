@@ -1,8 +1,8 @@
 @extends('../template/layout')
 @section('ogmeta')
     <meta property="og:url" content="<?echo url('/');?>/">
-    <meta property="og:title" content="Помощь - Ensteiner - Сервис организации мероприятий">
-    <meta property="og:description" content="Помощь - Ensteiner - Сервис организации мероприятий">
+    <meta property="og:title" content="Помощь - Einsteiners - Сервис организации мероприятий">
+    <meta property="og:description" content="Помощь - Einsteiners - Сервис организации мероприятий">
     <meta property="og:image" content="<?echo url('/');?>/images/ogimage.jpg">
 @endsection
 @section('header-style')

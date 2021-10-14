@@ -1,15 +1,15 @@
 @extends('../template/layout')
 @section('ogmeta')
     <meta property="og:url" content="<?echo url('/');?>/">
-    <meta property="og:title" content="{{ $event->name }} - Ensteiner - Сервис организации мероприятий">
-    <meta property="og:description" content="{{ $event->name }} - Ensteiner - Сервис организации мероприятий">
+    <meta property="og:title" content="{{ $event->name }} - Einsteiners - Сервис организации мероприятий">
+    <meta property="og:description" content="{{ $event->name }} - Einsteiners - Сервис организации мероприятий">
     <meta property="og:image" content="<?echo url('/');?>/images/ogimage.jpg">
 @endsection
 @section('stylesheet')
     
 @endsection
 @section('header')
-    <title>{{ $event->name }} - Ensteiner - Сервис организации мероприятий</title>     
+    <title>{{ $event->name }} - Einsteiners - Сервис организации мероприятий</title>     
     <meta name="description" content="Описание"/>
     <meta name="keywords" content="Ключевые слова"/>
 @endsection

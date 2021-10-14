@@ -171,7 +171,10 @@
                                         @php
                                             $datelocal = new DateTime($date_event);
                                         @endphp
+                                        {{--
                                         <input type="datetime-local" wire:model.defer="date_event" placeholder="@php echo date_format($datelocal,"d.m.Y H:i") @endphp" class="uk-input">
+                                        --}}
+                                        <input type="text" wire:model.defer="date_event" onFocus="maskPhone.call(this);" placeholder="__.__.__ __:__" class="uk-input">
                                     </div>
                                 </div>
                                 <div class="uk-grid-margin uk-first-column">
@@ -367,7 +370,11 @@
                                                 {{ $message }}
                                             </div>
                                         @enderror
+                                        {{--
                                         <input type="datetime-local" wire:model.defer="date_event" class="uk-input">
+                                        --}}
+                                        <input type="text" wire:model.defer="date_event" onFocus="maskPhone.call(this);" placeholder="__.__.__ __:__" class="uk-input">
+
                                     </div>
                                 </div>
                                 <div class="uk-grid-margin uk-first-column">

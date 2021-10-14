@@ -2,11 +2,11 @@
 @section('ogmeta')
     <meta property="og:url" content="<?echo url('/');?>/">
     @if(App::isLocale('ru'))
-        <meta property="og:title" content="{{ $event->name }} - Ensteiner - Сервис организации мероприятий">
-        <meta property="og:description" content="{{ $event->name }} - Ensteiner - Сервис организации мероприятий">
+        <meta property="og:title" content="{{ $event->name }} - Einsteiners - Сервис организации мероприятий">
+        <meta property="og:description" content="{{ $event->name }} - Einsteiners - Сервис организации мероприятий">
     @else
-        <meta property="og:title" content="{{ $event->name }} - Ensteiner - Event Management Service">
-        <meta property="og:description" content="{{ $event->name }} - Ensteiner - Event Management Service">
+        <meta property="og:title" content="{{ $event->name }} - Einsteiners - Event Management Service">
+        <meta property="og:description" content="{{ $event->name }} - Einsteiners - Event Management Service">
     @endif
     <meta property="og:image" content="<?echo url('/');?>/images/ogimage.jpg">
 @endsection
@@ -15,9 +15,9 @@
 @endsection
 @section('header')
     @if(App::isLocale('ru'))
-    <title>{{ $event->name }} - Ensteiner - Сервис организации мероприятий</title>
+    <title>{{ $event->name }} - Einsteiners - Сервис организации мероприятий</title>
     @else
-    <title>{{ $event->name }} - Ensteiner - Event Management Service</title>
+    <title>{{ $event->name }} - Einsteiners - Event Management Service</title>
     @endif
 @endsection
 @section('style')

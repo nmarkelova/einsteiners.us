@@ -22,7 +22,7 @@ class CalendarlistComponent extends Component
     use WithPagination;
     use WithFileUploads;
 
-    public $user, $select_calendars, $calendars, $name, $age, $date_event, $description, $location, $cover_path, $cover_add;
+    public $user, $select_calendars, $calendars, $name, $age, $date_event, $description, $location, $cover_path, $cover_add, $liability, $screening, $waiver, $release;
 
     public $personal, $phone;
 
@@ -53,7 +53,7 @@ class CalendarlistComponent extends Component
             $this->adminView = false; 
         }
 
-        $this->calendars = Calendar::all();
+        $this->calendars = Calendar::all()->sortDesc();
         //$this->calendars = Calendar::where('active', '1')->get()->take(20);
         return view('livewire.calendar.list');
     }

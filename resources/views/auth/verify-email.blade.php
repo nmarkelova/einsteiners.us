@@ -2,11 +2,11 @@
 @section('ogmeta')
     <meta property="og:url" content="<?echo url('/');?>/">
     @if(App::isLocale('ru'))
-        <meta property="og:title" content="Ensteiner - Сервис организации мероприятий">
-        <meta property="og:description" content="Ensteiner - Сервис организации мероприятий">
+        <meta property="og:title" content="Einsteiners - Сервис организации мероприятий">
+        <meta property="og:description" content="Einsteiners - Сервис организации мероприятий">
     @else
-        <meta property="og:title" content="Ensteiner - Event Management Service">
-        <meta property="og:description" content="Ensteiner - Event Management Service">
+        <meta property="og:title" content="Einsteiners - Event Management Service">
+        <meta property="og:description" content="Einsteiners - Event Management Service">
     @endif
     <meta property="og:image" content="<?echo url('/');?>/images/ogimage.jpg">
 @endsection

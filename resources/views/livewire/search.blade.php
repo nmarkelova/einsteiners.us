@@ -3,7 +3,7 @@
         <form method="POST" wire:submit.prevent="search">
             @csrf
             <div class="uk-grid uk-grid-small">
-                <div class="uk-width-2-5@xs">
+                <div class="uk-width-4-5@xs">
                     <div class="uk-search-input">
                         <div class="uk-inline">
                             <span class="uk-form-icon" data-uk-icon="icon: search" wire:ignore></span>
@@ -11,6 +11,7 @@
                         </div>
                     </div>
                 </div>
+                {{--
                 <div class="uk-width-2-5@xs">
                     @if(!$selectedCountry)
                     <div class="uk-search-input">
@@ -57,8 +58,9 @@
                             <input type="text" wire:model="searchCity" class="uk-input" placeholder="{{ __('LanCity') }}">
                         </div>
                     </div>
-                    --}}
+                    -}}
                 </div>
+                --}}
                 <div class="uk-width-1-5@xs">
                     <input class="uk-button-search" type="submit" value="{{ __('LanSerach') }}">
                 </div>

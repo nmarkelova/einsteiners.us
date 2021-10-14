@@ -301,11 +301,15 @@ Component: Calendar
     color: var(--base);
     margin-bottom: 40px;
 }
-.uk-modal-calendar .uk-modal-dialog .uk-panel-callback .uk-button-callback {
+.uk-modal-calendar .uk-modal-dialog .uk-panel-callback .uk-button-callback,
+.uk-button-callback {
     background: var(--base);
-    color: #FFF;
+    color: #fff;
     border-radius: 100px;
+    padding: 10px 25px;
     margin: 25px auto;
+    border: none;
+    min-width: 120px;
 }
 .uk-calendar {
     min-width: 1120px;
@@ -651,6 +655,7 @@ Component: Title
 ========================================================================== */
 .uk-video-screen {
     max-height: 100vh;
+    min-height: 600px;
     overflow: hidden;
 }
 .uk-video-screen .uk-inline,
@@ -666,7 +671,7 @@ Component: Title
 }
 @media (min-width:769px) {
     .uk-video-screen .uk-inline video {
-        min-width: -webkit-fill-available;
+        min-width: 100%;
     }
 }
 /*
@@ -931,9 +936,9 @@ Component: Number
     font-size: 2rem;
     font-weight: 700;
     color: var(--base);
-    top: -5px;
+    top: 0px;
     position: relative;
-    line-height: 0.5;
+    line-height: 1;
 }
 /* ========================================================================
 Component: Number
@@ -2468,6 +2473,11 @@ Component: Cookie
     padding: 10px;
     margin: 0 !important;
     font-size: 0.8rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
 }
 .uk-cookie.uk-alert .uk-button.uk-alert-close {
     position: relative !important;
@@ -2477,6 +2487,7 @@ Component: Cookie
 }
 .uk-modal-consent {
     background: rgba(0, 0, 0, 0.0);
+    z-index: 10000;
 }
 .uk-modal-consent::before {
     content: "";

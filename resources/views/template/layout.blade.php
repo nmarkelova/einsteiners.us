@@ -13,8 +13,8 @@
         {{--<link rel="manifest" href="{{ route('home') }}/manifest.json">--}}
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="application-name" content="Ensteiner">
-        <meta name="apple-mobile-web-app-title" content="Ensteiner">
+        <meta name="application-name" content="Einsteiners">
+        <meta name="apple-mobile-web-app-title" content="Einsteiners">
         <meta name="theme-color" content="#5ec9de"/>
         <meta name="msapplication-navbutton-color" content="#5ec9de">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -150,16 +150,16 @@
         <? /* Component: Open Graph ====================================================*/ ?>
         @if(View::hasSection('ogmeta'))
             <meta property="og:type" content="website"/>
-            <meta property="og:site_name" content="Ensteiner - Сервис организации мероприятий"/>
+            <meta property="og:site_name" content="Einsteiners - Сервис организации мероприятий"/>
             @yield('ogmeta')
             <meta property="og:image:width" content="1200"/>
             <meta property="og:image:height" content="630"/>
         @else
             <meta property="og:type" content="website"/>
-            <meta property="og:site_name" content="Ensteiner - Сервис организации мероприятий"/>
+            <meta property="og:site_name" content="Einsteiners - Сервис организации мероприятий"/>
             <meta property="og:url" content="{{ route('home') }}/">
-            <meta property="og:title" content="Главная - Ensteiner - Сервис организации мероприятий">
-            <meta property="og:description" content="Ensteiner - Сервис организации мероприятий">
+            <meta property="og:title" content="Главная - Einsteiners - Сервис организации мероприятий">
+            <meta property="og:description" content="Einsteiners - Сервис организации мероприятий">
             <meta property="og:image" content="{{ route('home') }}/images/ogimage.jpg">
             <meta property="og:image:width" content="1200"/>
             <meta property="og:image:height" content="630"/>
@@ -265,7 +265,7 @@
         <div class="uk-header-mobile">
             <div class="uk-grid uk-grid-small uk-flex uk-flex-middle" data-uk-grid>
                 <div class="uk-width-1-4@xs">
-                    <button class="uk-button uk-animation-toggle" data-uk-toggle="target: #offcanvas" type="button" data-uk-tooltip="title: Меню; pos: right; animation: uk-animation-slide-bottom">
+                    <button class="uk-button uk-animation-toggle" data-uk-toggle="target: #offcanvas" type="button">
                         <span class="uk-animation-slide-bottom" data-uk-icon="icon: menu; ratio: 2"></span>
                     </button>
                 </div>
@@ -334,11 +334,11 @@
                             <div class="uk-width-2-5@m uk-flex uk-flex-middle uk-flex-right uk-grid-small uk-link-element">
                                 <div>
                                     <ul class="uk-lang">
-                                        <li @if (empty(Cookie::get('lang')) || Cookie::get('lang') == 'ru') class="uk-active" @endif>
-                                            <a href="{{ url('/lang/ru/') }}">RU</a>
-                                        </li>
-                                        <li @if (Cookie::get('lang') == 'en') class="uk-active" @endif>
+                                        <li @if (empty(Cookie::get('lang')) || Cookie::get('lang') == 'en') class="uk-active" @endif>
                                             <a href="{{ url('/lang/en/') }}">EN</a>
+                                        </li>
+                                        <li @if (Cookie::get('lang') == 'ru') class="uk-active" @endif>
+                                            <a href="{{ url('/lang/ru/') }}">RU</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -507,10 +507,16 @@
         </div>
         @enddesktop
         @desktop
-        <div class="uk-header-bar uk-visible@m" data-uk-sticky="top: 100vh; animation: uk-animation-slide-left; offset: 0">
-            <button class="uk-button uk-animation-toggle" data-uk-toggle="target: #offcanvas" type="button" data-uk-tooltip="title: Меню; pos: right; animation: uk-animation-slide-bottom">
-                <span class="uk-animation-slide-bottom" data-uk-icon="icon: menu; ratio: 2"></span>
-            </button>
+        <div class="uk-header-bar uk-visible@m" data-uk-sticky="top: 120vh; animation: uk-animation-slide-left; offset: 0">
+            @if(App::isLocale('ru'))
+                <button class="uk-button uk-animation-toggle" data-uk-toggle="target: #offcanvas" type="button" data-uk-tooltip="title: Меню; pos: right; animation: uk-animation-slide-bottom">
+                    <span class="uk-animation-slide-bottom" data-uk-icon="icon: menu; ratio: 2"></span>
+                </button>
+            @else
+                <button class="uk-button uk-animation-toggle" data-uk-toggle="target: #offcanvas" type="button" data-uk-tooltip="title: Menu; pos: right; animation: uk-animation-slide-bottom">
+                    <span class="uk-animation-slide-bottom" data-uk-icon="icon: menu; ratio: 2"></span>
+                </button>
+            @endif
         </div>
         @enddesktop
 

@@ -1,17 +1,19 @@
 @extends('../template/layout')
 @section('ogmeta')
     <meta property="og:url" content="<?echo url('/');?>/">
-    <meta property="og:title" content="Профиль - Ensteiner - Сервис организации мероприятий">
-    <meta property="og:description" content="Профиль - Ensteiner - Сервис организации мероприятий">
+    <meta property="og:title" content="Профиль - Einsteiners - Сервис организации мероприятий">
+    <meta property="og:description" content="Профиль - Einsteiners - Сервис организации мероприятий">
     <meta property="og:image" content="<?echo url('/');?>/images/ogimage.jpg">
 @endsection
 @section('stylesheet')
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 @endsection
-@section('header')
-    <title>Профиль - Ensteiner - Сервис организации мероприятий</title>     
-    <meta name="description" content="Описание"/>
-    <meta name="keywords" content="Ключевые слова"/>
+@section('header')     
+    @if(App::isLocale('ru'))
+    <title>Профиль - Einsteiners - Сервис организации мероприятий</title>
+    @else
+    <title>Profil - Einsteiners - Event Management Service</title>
+    @endif
 @endsection
 @section('style')
     

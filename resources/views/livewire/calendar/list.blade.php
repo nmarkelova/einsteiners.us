@@ -135,7 +135,10 @@
                                         @php
                                             $datelocal = new DateTime($date_event);
                                         @endphp
+                                        {{--
                                         <input type="datetime-local" wire:model.defer="date_event" placeholder="@php echo date_format($datelocal,"d.m.Y H:i") @endphp" class="uk-input">
+                                        --}}
+                                        <input type="text" wire:model.defer="date_event" onFocus="maskPhone.call(this);" placeholder="__.__.__ __:__" class="uk-input">
                                     </div>
                                 </div>
                                 
@@ -270,7 +273,10 @@
                                                 {{ $message }}
                                             </div>
                                         @enderror
+                                        {{--
                                         <input type="datetime-local" wire:model.defer="date_event" class="uk-input">
+                                        --}}
+                                        <input type="text" wire:model.defer="date_event" onFocus="maskPhone.call(this);" placeholder="__.__.__ __:__" class="uk-input">
                                     </div>
                                 </div>
                         
@@ -360,6 +366,39 @@
                                 {{ $message }}
                             </div>
                         @enderror
+
+                        <hr />
+                        <div>
+                            <label>
+                                <input wire:model="liability" class="uk-checkbox" type="checkbox" required>
+                                <span>
+                                    Waiver and Release of Liability <a href="/document/WaiverAndReleaseOfLiability.pdf" target="_blank"><span data-uk-icon="file-pdf" wire:ignore></span> PDF</a>
+                                </span>
+                            </label>
+                            <br />
+                            <label>
+                                <input wire:model="screening" class="uk-checkbox" type="checkbox" required>
+                                <span>
+                                    Covid 19 - Health Screening Form <a href="/document/COVID-19HealthScreeningForm.pdf" target="_blank"><span data-uk-icon="file-pdf" wire:ignore></span> PDF</a>
+                                </span>
+                            </label>
+                            <br />
+                            <label>
+                                <input wire:model="waiver" class="uk-checkbox" type="checkbox" required>
+                                <span>
+                                    Covid 19 - Waiver <a href="/document/COVID-19LiabilityWaiver.pdf" target="_blank"><span data-uk-icon="file-pdf" wire:ignore></span> PDF</a>
+                                </span>
+                            </label>
+                            <br />
+                            <label>
+                                <input wire:model="release" class="uk-checkbox" type="checkbox" required>
+                                <span>
+                                    Photo release <a href="/document/PhotoRelease.pdf" target="_blank"><span data-uk-icon="file-pdf" wire:ignore></span> PDF</a>
+                                </span>
+                            </label>
+                        </div>
+                        <hr />
+
                     </div>
                     <div class="uk-text-center">
                         <input class="uk-button-callback" type="submit" value="{{ __('LanSand') }}">
@@ -393,7 +432,7 @@
                 @endphp
                 <div>
                     <div class="uk-card">
-                        <div class="uk-image" data-src="{{ route('storage') }}/{{ $calendar->cover_path }}" data-uk-img>
+                        <div class="uk-image" data-src="{{ route('storage') }}/{{ $calendar->cover_path }}" data-uk-img wire:ignore>
                             @if($calendar->age)
                                 <span>{{ $calendar->age }}</span>
                             @endif

@@ -20,7 +20,9 @@ class LocaleDetect
      */
     public function handle(Request $request, Closure $next)
     {
-        if (empty(Cookie::get('lang')) || Cookie::get('lang') == 'ru') {
+        if (empty(Cookie::get('lang'))) {
+            App::setLocale('en');
+        } elseif (Cookie::get('lang') == 'ru') {
             App::setLocale('ru');
         } elseif (Cookie::get('lang') == 'en') {
             App::setLocale('en');

@@ -42,7 +42,7 @@ class CreateUsersTable extends Migration
             'phone' => '+7(999)999-99-92',
             'email' => 'vendor@test.ru',
             'email_verified_at' => Carbon::tomorrow(),
-            'password' => '',
+            'password' => Hash::make('123123123'),
         ]);
 
         DB::table('users')->insert([
@@ -52,7 +52,7 @@ class CreateUsersTable extends Migration
             'phone' => '+7(999)999-99-91',
             'email' => 'private@test.ru',
             'email_verified_at' => Carbon::tomorrow(),
-            'password' => '',
+            'password' => Hash::make('123123123'),
         ]);
 
         DB::table('users')->insert([
@@ -62,7 +62,7 @@ class CreateUsersTable extends Migration
             'phone' => '+1(999)999-99-99',
             'email' => 'info@einsteiners.net',
             'email_verified_at' => Carbon::tomorrow(),
-            'password' => '',
+            'password' => Hash::make('Qw2910imo'),
         ]);
 
     }

@@ -1,15 +1,15 @@
 @extends('../template/layout')
 @section('ogmeta')
     <meta property="og:url" content="<?echo url('/');?>/">
-    <meta property="og:title" content="События - Ensteiner - Сервис организации мероприятий">
-    <meta property="og:description" content="События - Ensteiner - Сервис организации мероприятий">
+    <meta property="og:title" content="События - Einsteiners - Сервис организации мероприятий">
+    <meta property="og:description" content="События - Einsteiners - Сервис организации мероприятий">
     <meta property="og:image" content="<?echo url('/');?>/images/ogimage.jpg">
 @endsection
 @section('stylesheet')
     
 @endsection
 @section('header')
-    <title>События - Ensteiner - Сервис организации мероприятий</title>     
+    <title>События - Einsteiners - Сервис организации мероприятий</title>     
     <meta name="description" content="Описание"/>
     <meta name="keywords" content="Ключевые слова"/>
 @endsection
@@ -34,21 +34,12 @@
             window.getSelection().addRange(range); // to select text
             document.execCommand("copy");
             window.getSelection().removeAllRanges();// to deselect
-            @if(App::isLocale('ru'))
             UIkit.notification({
                 message: '<span data-uk-icon="icon: copy"></span> Ссылка скопирована',
                 status: 'primary uk-message-notification',
                 pos: 'top-center',
                 timeout: 5000
             });
-            @else
-            UIkit.notification({
-                message: '<span data-uk-icon="icon: copy"></span> The link is copied',
-                status: 'primary uk-message-notification',
-                pos: 'top-center',
-                timeout: 5000
-            });
-            @endif
         };
     </script>
 @endsection

@@ -1,4 +1,4 @@
-<div id="alertcookie" class="uk-cookie" data-uk-alert>
+<div id="alertcookie" class="uk-cookie" style="display: none;" data-uk-alert>
     <div class="uk-flex uk-flex-middle@m uk-grid-collapse" data-uk-grid>
         <div class="uk-width-3-4@xs">
             {{ __('LanCookie1') }} <a href="#cookie" data-uk-toggle onClick="showContent.call(this);event.preventDefault();" data-link="con-cookie" data-load="cookieloading" data-position="cookieBody">{{ __('LanMore') }}</a>

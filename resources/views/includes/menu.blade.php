@@ -1,10 +1,10 @@
 <div>
     <ul class="uk-lang">
-        <li @if (empty(Cookie::get('lang')) || Cookie::get('lang') == 'ru') class="uk-active" @endif>
-            <a href="{{ url('/lang/ru') }}">RU</a>
-        </li>
-        <li @if (Cookie::get('lang') == 'en') class="uk-active" @endif>
+        <li @if (empty(Cookie::get('lang')) || Cookie::get('lang') == 'en') class="uk-active" @endif>
             <a href="{{ url('/lang/en') }}">EN</a>
+        </li>
+        <li @if (Cookie::get('lang') == 'ru') class="uk-active" @endif>
+            <a href="{{ url('/lang/ru') }}">RU</a>
         </li>
     </ul>
     <ul class="uk-menu" uk-scrollspy="target: > li; cls:uk-animation-slide-left; delay: 100; repeat: true">
