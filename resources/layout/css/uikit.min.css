@@ -1859,7 +1859,7 @@ select.uk-form-width-xsmall {
   padding: 0;
   list-style: none
 }
-.uk-switcher > :not(.uk-active) {
+.uk-switcher > :not(.uk-selected) {
   display: none
 }
 .uk-switcher > * > :last-child {

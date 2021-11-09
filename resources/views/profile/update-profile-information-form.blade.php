@@ -1,4 +1,5 @@
 <x-jet-form-section submit="updateProfileInformation">
+    
     <x-slot name="title">
         {{ __('Profile Information') }}
     </x-slot>
@@ -65,7 +66,15 @@
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
         </div>
+
+        <!-- Children -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label value="Children" />
+            @livewire('user.children-component', ['event_id' => '1'])
+        </div>
+
     </x-slot>
+
 
     <x-slot name="actions">
         <x-jet-action-message class="mr-3" on="saved">

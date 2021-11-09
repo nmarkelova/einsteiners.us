@@ -14,9 +14,11 @@
         <li class="{{ request()->is('calendarlist') ? 'uk-active' : null }}">
             <a href="{{ route('calendarlist') }}">{{ __('LanCalendar') }}</a>
         </li>
+        {{--
         <li class="{{ request()->is('service') ? 'uk-active' : null }}">
             <a href="{{ route('service') }}">{{ __('LanService') }}</a>
         </li>
+        --}}
         {{--
         <li class="{{ request()->is('help') ? 'uk-active' : null }}">
             <a href="{{ route('help') }}">{{ __('LanHelp') }}</a>

@@ -370,7 +370,7 @@ class ActivitieComponent extends Component
             $image = DB::table('activities')->where('id', $id)->first();
             $this->confirmEvent = false;
             sleep(1);
-            Storage::disk('public')->delete($image->cover_path);
+            //Storage::disk('public')->delete($image->cover_path);
             $activitie->delete();
         }
 

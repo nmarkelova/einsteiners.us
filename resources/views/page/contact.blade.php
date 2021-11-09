@@ -24,7 +24,7 @@
         <meta name="keywords" content="Ключевые слова"/>
         --}}  
     @else
-        <title>Сontacts</title>
+        <title>Сontact</title>
         {{--
         <meta name="description" content="Описание"/>
         <meta name="keywords" content="Ключевые слова"/>
@@ -64,7 +64,7 @@
                 </div>
             </div>
         @else
-            <h1>Сontacts</h1>
+            <h1>Сontact</h1>
             <div class="uk-grid uk-grid-small uk-child-width-1-1" data-uk-grid>
                 <div>
                     <div class="uk-grid uk-grid-small uk-flex uk-flex-middle" data-uk-grid>

@@ -278,7 +278,7 @@ class EventComponent extends Component
             $gifts = DB::table('gifts')->where('event_id', $id);
             $this->confirmEvent = false;
             sleep(1);
-            Storage::disk('public')->delete($image->cover_path);
+            //Storage::disk('public')->delete($image->cover_path);
             $guests->delete();
             $gifts->delete();
             $event->delete();

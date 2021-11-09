@@ -80,7 +80,7 @@ use App\Models\Payment;
     use App\Http\Controllers\Service\KeyController;
     Route::get('/key', [KeyController::class, 'key'])->name('key');
     use App\Http\Controllers\Service\LinkController;
-    Route::get('/link', [KeyController::class, 'link'])->name('link');
+    Route::get('/link', [LinkController::class, 'link'])->name('link');
 // Cashe Clean //
 // Redirect Login //
     /*

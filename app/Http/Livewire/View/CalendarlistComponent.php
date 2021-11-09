@@ -15,6 +15,12 @@ use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notifiable;
+use Carbon\Carbon;
+use DateTime;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Feedback;
+use App\Models\User;
+use App\Models\Children;
 
 class CalendarlistComponent extends Component
 {
@@ -22,9 +28,11 @@ class CalendarlistComponent extends Component
     use WithPagination;
     use WithFileUploads;
 
-    public $user, $select_calendars, $calendars, $name, $age, $date_event, $description, $location, $cover_path, $cover_add, $liability, $screening, $waiver, $release;
+    public $childrenlist, $user, $select_calendars, $calendars, $name, $age, $date_event, $description, $location, $cover_path, $cover_add;
 
-    public $personal, $phone;
+    public $personal, $phone, $date, $children, $liability, $screening, $waiver, $release;
+
+    public $now;
 
     public $adminView = false;
     public $selected_id = null;
@@ -40,7 +48,7 @@ class CalendarlistComponent extends Component
     public function render()
     {
         $user = Auth::user();
-
+        $this->now = date_format(new DateTime('now'),"Y-m-d");
         //dd($user);
 
         if (isset($user)) {
@@ -53,8 +61,15 @@ class CalendarlistComponent extends Component
             $this->adminView = false; 
         }
 
-        $this->calendars = Calendar::all()->sortDesc();
+        if(isset($user)) {
+            $this->user = $user->id;
+            $this->childrenlist = Children::where('user_id', $user->id)->get();
+        }
+
+        //$this->calendars = Calendar::all();
+        $this->calendars = Calendar::all()->sortBy('date_event'); //sortByDesc
         //$this->calendars = Calendar::where('active', '1')->get()->take(20);
+        //$this->calendars = Calendar::where('active', '1')->get();
         return view('livewire.calendar.list');
     }
 
@@ -62,12 +77,12 @@ class CalendarlistComponent extends Component
     {
         $user = Auth::user();
         $this->validate([
-            'name' => 'required|min:5',
+            'name' => 'required|min:1',
             'cover_add' => 'required|image|max:1024',
             'age' => 'required|min:1',
-            'location' => 'required|min:5',
+            'location' => 'required|min:1',
             'date_event' => 'required',
-            'description' => 'required|min:50',
+            'description' => 'required|min:1',
         ]);
 
         Calendar::create([
@@ -100,26 +115,62 @@ class CalendarlistComponent extends Component
     {
         return 'info@einsteiners.net';
     }
-
+    /*
     public function sand($id) {
         $this->select_calendars = Calendar::find($id);
         $this->callbackModal = false;
-        /*
-        VerifyEmail::toMailUsing(function ($notifiable, $url) {
-            return (new MailMessage)
-                ->from('info@einsteiners.net', 'Einsteiners Service')
-                ->greeting('Hello! Einsteiners.net')
-                ->subject('Verify Email Address')
-                ->line('Click the button below to verify your email address.')
-                ->action('Verify Email Address', $url);
-        });
-        */
-        return (new MailMessage)
-                ->from('info@einsteiners.net', 'Einsteiners Service')
-                ->greeting($this->elect_calendars->name)
-                ->subject($this->elect_calendars->name)
-                ->line('Click the button below to verify your email address.')
-                ->action('Verify Email Address', $url);
+        $params = [
+            'orderTitle' => $this->select_calendars->name,
+            'orderName' => 'Заголовок',
+            //'orderName' => $this->$personal,
+            //'orderPhone' => $this->$phone,
+            //'orderLiability' => $this->$liability,
+            //'orderScreening' => $this->$screening,
+            //'orderWaiver' => $this->$waiver,
+            //'orderRelease' => $this->$release,
+        ];
+        Mail::to('info@einsteiners.net')->send(new Feedback($params));
+        $this->resetInput();
+        if (App::isLocale('ru')) {
+            session()->flash('message', 'Заявка отправлена');
+        } elseif (App::isLocale('en')) {
+            session()->flash('message', 'The application has been sent');
+        }
+    }
+    */
+    public function sand($id) {
+        $this->select_calendars = Calendar::find($id);
+        $this->callbackModal = false;
+
+        $this->validate([
+            'personal' => 'required|min:1',
+            'phone' => 'required|min:1',
+            'children' => 'required|min:1',
+            'liability' => 'required|min:1',
+            'screening' => 'required|min:1',
+            'waiver' => 'required|min:1',
+            'release' => 'required|min:1',
+        ]);
+
+        $params = [
+            'orderTitle' => $this->select_calendars->name,
+            'orderTime' => $this->select_calendars->date_event,
+            'orderName' => $this->personal,
+            'orderPhone' => $this->phone,
+            'orderChildren' => $this->children,
+            'orderLiability' => $this->liability,
+            'orderScreening' => $this->screening,
+            'orderWaiver' => $this->waiver,
+            'orderRelease' => $this->release,
+        ];
+        Mail::to('info@einsteiners.net')->send(new Feedback($params));
+
+        $this->resetInput();
+        if (App::isLocale('ru')) {
+            session()->flash('message', 'Заявка отправлена');
+        } elseif (App::isLocale('en')) {
+            session()->flash('message', 'The application has been sent');
+        }
     }
 
     public function update()
@@ -127,12 +178,12 @@ class CalendarlistComponent extends Component
         if ($this->upgradeUpload) {
             $this->validate([
                 'selected_id' => 'required|numeric',
-                'name' => 'required|min:5',
+                'name' => 'required|min:1',
                 'cover_path' => 'required|image|max:1024',
                 'age' => 'required|min:1',
                 'location' => 'required|min:5',
                 'date_event' => 'required', /*date_format:d.m.Y H:i 12.12.1212 12:00*/
-                'description' => 'required|min:50',
+                'description' => 'required|min:1',
             ]);
             if ($this->selected_id) {
                 $calendars = Calendar::find($this->selected_id);
@@ -159,12 +210,12 @@ class CalendarlistComponent extends Component
         } else {
             $this->validate([
                 'selected_id' => 'required|numeric',
-                'name' => 'required|min:5',
+                'name' => 'required|min:1',
                 //'cover_path' => 'required|image|max:1024',
                 'age' => 'required|min:1',
                 'location' => 'required|min:5',
                 'date_event' => 'required', /*date_format:d.m.Y H:i 12.12.1212 12:00*/
-                'description' => 'required|min:50',
+                'description' => 'required|min:1',
             ]);
             if ($this->selected_id) {
                 $calendars = Calendar::find($this->selected_id);
@@ -199,7 +250,7 @@ class CalendarlistComponent extends Component
             $image = DB::table('calendars')->where('id', $id)->first();
             $this->confirmEvent = false;
             sleep(1);
-            Storage::disk('public')->delete($image->cover_path);
+            //Storage::disk('public')->delete($image->cover_path);
             $calendars->delete();
         }
 

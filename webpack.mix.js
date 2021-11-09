@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+let mix = require('laravel-mix');
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +59,7 @@ mix
     .options({
         processCssUrls: false, // Отключаем автоматическое обновление URL в CSS
     })
+    .setPublicPath('public')
     // Включаем версионность
     
     if (mix.inProduction()) {

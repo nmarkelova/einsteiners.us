@@ -313,9 +313,11 @@
                                             <li class="{{ request()->is('calendarlist') ? 'uk-active' : null }}">
                                                 <a href="{{ route('calendarlist') }}">{{ __('LanCalendar') }}</a>
                                             </li>
+                                            {{--
                                             <li class="{{ request()->is('service') ? 'uk-active' : null }}">
                                                 <a href="{{ route('service') }}">{{ __('LanService') }}</a>
                                             </li>
+                                            --}}
                                             {{--
                                             <li class="{{ request()->is('help') ? 'uk-active' : null }}">
                                                 <a href="{{ route('help') }}">{{ __('LanHelp') }}</a>
@@ -507,7 +509,7 @@
         </div>
         @enddesktop
         @desktop
-        <div class="uk-header-bar uk-visible@m" data-uk-sticky="top: 120vh; animation: uk-animation-slide-left; offset: 0">
+        <div class="uk-header-bar uk-visible@l" data-uk-sticky="top: 120vh; animation: uk-animation-slide-left; offset: 0">
             @if(App::isLocale('ru'))
                 <button class="uk-button uk-animation-toggle" data-uk-toggle="target: #offcanvas" type="button" data-uk-tooltip="title: Меню; pos: right; animation: uk-animation-slide-bottom">
                     <span class="uk-animation-slide-bottom" data-uk-icon="icon: menu; ratio: 2"></span>

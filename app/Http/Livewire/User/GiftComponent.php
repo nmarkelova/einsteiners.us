@@ -170,7 +170,7 @@ class GiftComponent extends Component
         if ($id) {
             $gift = Gift::where('id', $id);
             $image = DB::table('gifts')->where('id', $id)->first();
-            Storage::disk('public')->delete($image->cover_path);
+            //Storage::disk('public')->delete($image->cover_path);
             $this->confirmGift = false;
             sleep(1);
             $gift->delete();

@@ -176,7 +176,7 @@ class PartnerComponent extends Component
             $image = DB::table('partners')->where('id', $id)->first();
             $this->confirmEvent = false;
             sleep(1);
-            Storage::disk('public')->delete($image->cover_path);
+            //Storage::disk('public')->delete($image->cover_path);
             $partner->delete();
         }
 
