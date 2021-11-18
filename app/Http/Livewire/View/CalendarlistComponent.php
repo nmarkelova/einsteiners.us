@@ -115,29 +115,7 @@ class CalendarlistComponent extends Component
     {
         return 'info@einsteiners.net';
     }
-    /*
-    public function sand($id) {
-        $this->select_calendars = Calendar::find($id);
-        $this->callbackModal = false;
-        $params = [
-            'orderTitle' => $this->select_calendars->name,
-            'orderName' => 'Заголовок',
-            //'orderName' => $this->$personal,
-            //'orderPhone' => $this->$phone,
-            //'orderLiability' => $this->$liability,
-            //'orderScreening' => $this->$screening,
-            //'orderWaiver' => $this->$waiver,
-            //'orderRelease' => $this->$release,
-        ];
-        Mail::to('info@einsteiners.net')->send(new Feedback($params));
-        $this->resetInput();
-        if (App::isLocale('ru')) {
-            session()->flash('message', 'Заявка отправлена');
-        } elseif (App::isLocale('en')) {
-            session()->flash('message', 'The application has been sent');
-        }
-    }
-    */
+
     public function sand($id) {
         $this->select_calendars = Calendar::find($id);
         $this->callbackModal = false;
@@ -146,10 +124,6 @@ class CalendarlistComponent extends Component
             'personal' => 'required|min:1',
             'phone' => 'required|min:1',
             'children' => 'required|min:1',
-            'liability' => 'required|min:1',
-            'screening' => 'required|min:1',
-            'waiver' => 'required|min:1',
-            'release' => 'required|min:1',
         ]);
 
         $params = [
@@ -158,10 +132,10 @@ class CalendarlistComponent extends Component
             'orderName' => $this->personal,
             'orderPhone' => $this->phone,
             'orderChildren' => $this->children,
-            'orderLiability' => $this->liability,
-            'orderScreening' => $this->screening,
-            'orderWaiver' => $this->waiver,
-            'orderRelease' => $this->release,
+            'orderLiability' => true,
+            'orderScreening' => true,
+            'orderWaiver' => true,
+            'orderRelease' => true,
         ];
         Mail::to('info@einsteiners.net')->send(new Feedback($params));
 

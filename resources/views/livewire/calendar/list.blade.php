@@ -135,9 +135,6 @@
                                         @php
                                             $datelocal = new DateTime($date_event);
                                         @endphp
-                                        {{--
-                                        <input type="datetime-local" wire:model.defer="date_event" placeholder="@php echo date_format($datelocal,"d.m.Y H:i") @endphp" class="uk-input">
-                                        --}}
                                         <input type="text" wire:model.defer="date_event" onFocus="maskPhone.call(this);" placeholder="____-__-__ __:__:__" class="uk-input">
                                     </div>
                                 </div>
@@ -182,9 +179,6 @@
                 </form>
             </div>
         </div>
-        {{--
-        @include('livewire.event.edit')
-        --}}
     @else
         @if ($createMode)
         <div id="crevent" class="uk-modal uk-modal-event uk-flex-top uk-open" style="display: flex" data-uk-modal>
@@ -273,9 +267,6 @@
                                                 {{ $message }}
                                             </div>
                                         @enderror
-                                        {{--
-                                        <input type="datetime-local" wire:model.defer="date_event" class="uk-input">
-                                        --}}
                                         <input type="text" wire:model.defer="date_event" onFocus="maskPhone.call(this);" placeholder="____-__-__ __:__:__" class="uk-input">
                                     </div>
                                 </div>
@@ -320,9 +311,6 @@
             </div>
         </div>
         @endif
-        {{--
-        @include('livewire.event.create')
-        --}}
     @endif
 
     @if($callbackModal)
@@ -396,66 +384,11 @@
                                 {{ $message }}
                             </div>
                         @enderror
-
-                        
                         <br />
                         <br />
                         <hr />
-                        <div>
-                            <label>
-                                <input wire:model.defer="liability" class="uk-checkbox" type="checkbox" required>
-                                <span>
-                                    Waiver and Release of Liability <a href="/document/WaiverAndReleaseOfLiability.pdf" target="_blank"><span data-uk-icon="file-pdf" wire:ignore></span> PDF</a>
-                                </span>
-                            </label>
-                            @error('liability')
-                                <div class="uk-alert-danger" data-uk-alert>
-                                    <a class="uk-alert-close" data-uk-close></a>
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                            <br />
-                            <label>
-                                <input wire:model.defer="screening" class="uk-checkbox" type="checkbox" required>
-                                <span>
-                                    Covid 19 - Health Screening Form <a href="/document/COVID-19HealthScreeningForm.pdf" target="_blank"><span data-uk-icon="file-pdf" wire:ignore></span> PDF</a>
-                                </span>
-                            </label>
-                            @error('screening')
-                                <div class="uk-alert-danger" data-uk-alert>
-                                    <a class="uk-alert-close" data-uk-close></a>
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                            <br />
-                            <label>
-                                <input wire:model.defer="waiver" class="uk-checkbox" type="checkbox" required>
-                                <span>
-                                    Covid 19 - Waiver <a href="/document/COVID-19LiabilityWaiver.pdf" target="_blank"><span data-uk-icon="file-pdf" wire:ignore></span> PDF</a>
-                                </span>
-                            </label>
-                            @error('waiver')
-                                <div class="uk-alert-danger" data-uk-alert>
-                                    <a class="uk-alert-close" data-uk-close></a>
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                            <br />
-                            <label>
-                                <input wire:model.defer="release" class="uk-checkbox" type="checkbox" required>
-                                <span>
-                                    Photo release <a href="/document/PhotoRelease.pdf" target="_blank"><span data-uk-icon="file-pdf" wire:ignore></span> PDF</a>
-                                </span>
-                            </label>
-                            @error('release')
-                                <div class="uk-alert-danger" data-uk-alert>
-                                    <a class="uk-alert-close" data-uk-close></a>
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
+                        <livewire:view.agreement-component>
                         <hr />
-
                     </div>
                     <div class="uk-text-center">
                         <input class="uk-button-callback" type="submit" value="{{ __('LanSand') }}">
@@ -464,12 +397,9 @@
                         {{ __('LanPoli1') }} <a class="uk-consent" href="#consent" data-uk-toggle onClick="showContent.call(this);event.preventDefault();" data-link="con-consent" data-load="consentloading" data-position="consentBody">{{ __('LanPoli2') }}</a>.
                     </div>
                 </form>
-
-
             </div>
         </div>
     @endif
-
     @if($adminView)
         <div class="uk-text-center uk-margin">
             <div class="uk-button-card uk-button uk-button-mobile-large">
@@ -477,20 +407,16 @@
             </div>
         </div>
     @endif
-    
     <div class="uk-position-relative">
         <div class="uk-loading" wire:loading.flex>
             <span class="uk-spinner uk-icon" data-uk-spinner wire:ignore></span>
         </div>
-        {{--<div class="uk-list-event uk-grid uk-child-width-1-3@m uk-grid-small" data-uk-grid data-uk-height-match="target: > div > .uk-card">--}}
-            
             @php
                 $days[] = $now;
             @endphp
             
             @foreach ($calendars as $calendar)
                 @php
-                    //$date = new DateTime($calendar->date_event);
                     $days[] = date_format(new DateTime($calendar->date_event),"Y-m-d");
                 @endphp
             @endforeach
@@ -749,82 +675,5 @@
             <h2>Teenagers</h2>
             <p>Is the hardest stage of kids' development. They gained a lot of knowledge and with that, they start to learn on hands experience. At this stage, healthy habits should be introduced to help your child transition to adults life. By learning how to take care of themselves - they learn how to take care of others. It is important to have ongoing discussions about sex, STIs, sexual abuse, and assault. By defining difficult questions to your kids you might avoid the unalterable consequences. Teens are welcome to contact our teachers to help with directions with their issues.</p>
             @endif
-
-            
-            {{--
-            @foreach ($calendars as $calendar)
-                @php
-                    $date = new DateTime($calendar->date_event);
-                @endphp
-                <div>
-                    <div class="uk-card">
-                        <div class="uk-image" data-src="{{ route('storage') }}/{{ $calendar->cover_path }}" data-uk-img wire:ignore>
-                            @if($calendar->age)
-                                <span>{{ $calendar->age }}</span>
-                            @endif
-                        </div>
-                        @if($calendar->date_event > date('Y-m-d H:i:s'))
-                            <div class="uk-panel-time" wire:ignore>
-                                <div class="uk-grid uk-grid-small uk-child-width-auto" data-uk-grid data-uk-countdown="date: @php echo date_format($date,"Y-m-d") . "T" . date_format($date,"h:m:s"); @endphp">
-                                    <div>
-                                        <div class="uk-countdown-number uk-countdown-days"></div>
-                                        <div class="uk-countdown-label uk-margin-small uk-text-center">{{ __('LanDays') }}</div>
-                                    </div>
-                                    <div class="uk-countdown-separator">:</div>
-                                    <div>
-                                        <div class="uk-countdown-number uk-countdown-hours"></div>
-                                        <div class="uk-countdown-label uk-margin-small uk-text-center">{{ __('LanHourse') }}</div>
-                                    </div>
-                                    <div class="uk-countdown-separator">:</div>
-                                    <div>
-                                        <div class="uk-countdown-number uk-countdown-minutes"></div>
-                                        <div class="uk-countdown-label uk-margin-small uk-text-center">{{ __('LanMinutes') }}</div>
-                                    </div>
-                                    <div class="uk-countdown-separator">:</div>
-                                    <div>
-                                        <div class="uk-countdown-number uk-countdown-seconds"></div>
-                                        <div class="uk-countdown-label uk-margin-small uk-text-center">{{ __('LanSecond') }}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
-                        <div class="uk-content">
-                            <div class="uk-date">
-                                <span>{{ date_format($date,"d.m") }}</span> {{ date_format($date,"Y") }}, {{ date_format($date,"H:s") }}
-                            </div>
-                            <h2>{{ $calendar->name }}</h2>
-                            <ul class="uk-list" wire:ignore>
-                                <li>{{ __('LanPlace') }}:
-                                    <span>{{ $calendar->location }}</span>
-                                </li>
-                            </ul>
-                            <div class="uk-grid uk-margin-top uk-grid-small uk-flex uk-flex-middle" data-uk-grid>
-                                <div class="uk-width-1-2@xs">
-                                    <button class="uk-button uk-button-symbol" wire:click="callbackModal({{ $calendar->id }})">
-                                        {{ __('LanSingup') }}
-                                    </button>
-                                </div>
-                                @if ($adminView)
-                                    <div class="uk-width-1-4@xs">
-                                        <button class="uk-button uk-button-symbol" wire:click="edit({{ $calendar->id }})" data-uk-tooltip="title: {{ __('LanEdit') }}; pos: bottom">
-                                            <span class="uk-icon uk-update" data-uk-icon="icon: pencil" wire:ignore></span>
-                                        </button>
-                                    </div>
-                                    <div class="uk-width-1-4@xs">
-                                        <button class="uk-button uk-button-symbol" wire:click="deleteConfirm({{ $calendar->id }})" data-uk-tooltip="title: {{ __('LanDelete') }}; pos: bottom">
-                                            <span class="uk-icon uk-update" data-uk-icon="icon: trash" wire:ignore></span>
-                                        </button>
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-            --}}
-        {{--</div>--}}
-        {{--
-        {{ $calendars->links() }}
-        --}}
     </div>
 </div>

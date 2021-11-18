@@ -1,4 +1,9 @@
 {
+    "lanAgreementClean": "Нет загруженных документов.",
+    "LanCreateAgreement": "Добавить документ",
+    "lanAgreementName": "Название документа",
+    "LanUploadAgreement": "Загрузить документ",
+    "LanListAgreement": "Список документов",
     "LangNo": "Нет",
     "LangYes": "Да",
     "LangDeleteKid": "Удалить выбранного ребенка из списка?",

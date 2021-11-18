@@ -144,6 +144,7 @@ use App\Models\Payment;
         //Route::resource('events.index', User\EventController::class);
         Route::view('/events', 'events.index')->name('personal-events');
         Route::view('/activities', 'activities.index')->name('personal-activities');
+        Route::view('/agreement', 'admin.agreement')->name('agreement');
         // Ajax //
     });
 // Event //

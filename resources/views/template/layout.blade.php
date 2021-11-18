@@ -389,6 +389,11 @@
                                                     <span data-uk-icon="album"></span> {{ __('LanListMassEvent') }}
                                                 </a>
                                             </li>
+                                            <li>
+                                                <a href="{{ route('agreement') }}">
+                                                    <span data-uk-icon="album"></span> {{ __('LanListAgreement') }}
+                                                </a>
+                                            </li>
                                         </ul>
                                         <br />
                                         @endif
