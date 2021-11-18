@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use Illuminate\Support\Facades\App;
 use Livewire\Component;
 use App\Models\User;
 use App\Models\Agreement;
@@ -48,12 +49,12 @@ class AgreementComponent extends Component
     {
         $this->validate([
             'name' => 'required|min:2',
-            'cover_add' => 'required|image|max:1024',
+            'cover_add' => 'required|max:15000',
         ]);
 
         Agreement::create([
             'name' => $this->name,
-            'cover_path' => $this->cover_add->store('upload/activitie', 'public'),
+            'cover_path' => $this->cover_add->store('upload/agreement', 'public'),
         ]);
         $this->resetInput();
         $this->createMode = false;
@@ -72,14 +73,14 @@ class AgreementComponent extends Component
             $this->validate([
                 'selected_id' => 'required|numeric',
                 'name' => 'required|min:2',
-                'cover_path' => 'required|image|max:1024',
+                'cover_path' => 'required|max:15000',
             ]);
             if ($this->selected_id) {
                 $agreement = Agreement::find($this->selected_id);
                 $agreement->update([
                     'id' => $this->selected_id,
                     'name' => $this->name,
-                    'cover_path' => $this->cover_path->store('upload/event', 'public'),
+                    'cover_path' => $this->cover_path->store('upload/agreement', 'public'),
                 ]);
                 $this->resetInput();
                 $this->addMode = false;

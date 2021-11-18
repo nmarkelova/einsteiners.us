@@ -1,4 +1,8 @@
 {
+    "lanAgreementClean": "There are no available agreement.",
+    "LanCreateAgreement": "Add agreement",
+    "lanAgreementName": "Document name",
+    "LanUploadAgreement": "Upload a agreement doc",
     "LangNo": "No",
     "LangYes": "Yes",
     "LangDeleteKid": "Delete a selected kid list?",

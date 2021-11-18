@@ -9,7 +9,7 @@
         <script>
             document.addEventListener('livewire:load', function () {
                 @this.create();
-                window.history.pushState('1', 'Title', '/events');
+                window.history.pushState('1', 'Title', '/agreement');
             });
         </script>
     @endif
@@ -43,7 +43,7 @@
                         <div class="uk-grid uk-child-width-1-1 uk-grid-stack" data-uk-grid>
                             <div class="uk-first-column">
                                 <div class="uk-line-input">
-                                    <label><i>*</i> {{ __('lanEventName') }}</label>
+                                    <label><i>*</i> {{ __('lanAgreementName') }}</label>
                                     @error('name')
                                         <div class="uk-alert-danger" data-uk-alert>
                                             <a class="uk-alert-close" data-uk-close></a>
@@ -56,14 +56,14 @@
                             {{-- Test --}}
                             @if ($previewMode)
                                 <div class="uk-grid-margin uk-first-column">
-                                    <div class="uk-previe">
-                                        <img class="uk-cover" data-uk-cover src="{{ route('storage') }}/{{ $previewMode }}">
+                                    <div class="uk-document-load">
+                                        {{ $previewMode }}
                                     </div>
                                 </div>
                             @else
                                 <div class="uk-grid-margin uk-first-column">
-                                    <div class="uk-previe">
-                                        <img class="uk-cover" data-uk-cover src="{{ route('storage') }}/{{ $cover_path }}">
+                                    <div class="uk-document-load">
+                                        {{ $cover_path }}
                                     </div>
                                 </div>
                             @endif
@@ -71,7 +71,7 @@
                             <div class="uk-grid-margin uk-first-column">
                                 <div class="uk-placeholder uk-placeholder-upload uk-text-center">
                                     <span class="uk-icon" data-uk-icon="icon: cloud-upload" wire:ignore></span>
-                                    <span class="uk-text-middle">{{ __('LanUploadImage') }}</span>
+                                    <span class="uk-text-middle">{{ __('LanUploadAgreement') }}</span>
                                     <div class="uk-form-custom" data-uk-form-custom>
                                         <input type="file" wire:model.defer="cover_path">
                                         <span class="uk-link">{{ __('LanUploadTo') }}</span>
@@ -102,7 +102,7 @@
             <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body uk-animation-slide-top">
                 <button class="uk-modal-close-default" type="button" data-uk-close wire:ignore></button>
                 <h2 class="uk-modal-title">
-                    {{ __('LanCreateEvent') }}
+                    {{ __('LanCreateAgreement') }}
                 </h2>
                 <form wire:submit.prevent="store" enctype="multipart/form-data" method="POST">
                     @csrf
@@ -110,7 +110,7 @@
                         <div class="uk-grid uk-child-width-1-1 uk-grid-stack" data-uk-grid>
                             <div class="uk-first-column">
                                 <div class="uk-line-input">
-                                    <label><i>*</i> {{ __('lanEventName') }}</label>
+                                    <label><i>*</i> {{ __('lanAgreementName') }}</label>
                                     @error('name')
                                         <div class="uk-alert-danger" data-uk-alert>
                                             <a class="uk-alert-close" data-uk-close></a>
@@ -123,8 +123,8 @@
                             {{-- Test --}}
                             @if ($previewAddMode)
                                 <div class="uk-grid-margin uk-first-column">
-                                    <div class="uk-previe" wire:loading.class="bg-gray">
-                                        <img class="uk-cover" data-uk-cover src="{{ route('storage') }}/{{ $previewAddMode }}">
+                                    <div class="uk-document-load" wire:loading.class="bg-gray">
+                                        {{ $previewAddMode }}
                                     </div>
                                 </div>
                             @endif
@@ -132,7 +132,7 @@
                                 <div class="uk-grid-margin uk-first-column">
                                     <div class="uk-placeholder uk-placeholder-upload uk-text-center">
                                         <span class="uk-icon" data-uk-icon="icon: cloud-upload" wire:ignore></span>
-                                        <span class="uk-text-middle">{{ __('LanUploadImage') }}</span>
+                                        <span class="uk-text-middle">{{ __('LanUploadAgreement') }}</span>
                                         <div class="uk-form-custom" data-uk-form-custom>
                                             <input type="file" wire:model.defer="cover_add">
                                             <span class="uk-link">{{ __('LanUploadTo') }}</span>
@@ -151,7 +151,7 @@
                     </div>
                     <div class="uk-modal-footer">
                         <div class="uk-button uk-button-submit">
-                            <input type="submit" value="{{ __('LanCreateEvent') }}">
+                            <input type="submit" value="{{ __('LanCreateAgreement') }}">
                         </div>
                     </div>
                 </form>
@@ -166,10 +166,9 @@
                 <div>
                     <span class="uk-icon" data-uk-icon="icon: album; ratio: 2"></span>
                 </div>
-                <h2>{{ __('lanEventClean') }}</h2>
-                <p>{{ __('lanEventCleanDesk') }}</p>
+                <h2>{{ __('lanAgreementClean') }}</h2>
                 <div class="uk-button-card uk-button">
-                    <a href="{{ route('personal-events') }}?create=1">{{ __('LanCreateEvent') }}</a>
+                    <a href="{{ route('agreement') }}?create=1">{{ __('LanCreateAgreement') }}</a>
                 </div>
             </div>
         </div>
@@ -183,7 +182,9 @@
                         <span data-uk-spinner></span>
                     </div>
                     @if($agreement['cover_path'])
-                        <div class="uk-image" data-src="{{ route('storage') }}/{{ $agreement->cover_path }}" data-uk-img></div>
+                        <div class="uk-image uk-document-name">
+                            {{ $agreement->cover_path }}
+                        </div>
                     @endif
                     <div class="uk-content">
                         <div class="uk-grid uk-flex uk-flex-middle" data-uk-grid>
