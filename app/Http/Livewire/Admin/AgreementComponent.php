@@ -12,14 +12,13 @@ use Illuminate\Support\Facades\DB;
 class AgreementComponent extends Component
 {
     use WithFileUploads;
-    public $name, $cover_path;
+    public $agreements, $name, $cover_path;
 
     public function render()
     {
-        return <<<'blade'
-            <div>
-                {{-- The Master doesn't talk, he acts. --}}
-            </div>
-        blade;
+        $this->agreements = Agreement::all();
+        return view('livewire.admin.agreement', [
+            'Agreements' => Agreement::all(),
+        ]);
     }
 }
