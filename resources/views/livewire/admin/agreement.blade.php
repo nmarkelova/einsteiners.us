@@ -57,13 +57,13 @@
                             @if ($previewMode)
                                 <div class="uk-grid-margin uk-first-column">
                                     <div class="uk-document-load">
-                                        {{ $previewMode }}
+                                        <iframe src="{{ route('storage') }}/{{ $previewMode }}" width="100%" height="300"></iframe>
                                     </div>
                                 </div>
                             @else
                                 <div class="uk-grid-margin uk-first-column">
                                     <div class="uk-document-load">
-                                        {{ $cover_path }}
+                                        <iframe src="{{ route('storage') }}/{{ $cover_path }}" width="100%" height="300"></iframe>
                                     </div>
                                 </div>
                             @endif
@@ -124,7 +124,7 @@
                             @if ($previewAddMode)
                                 <div class="uk-grid-margin uk-first-column">
                                     <div class="uk-document-load" wire:loading.class="bg-gray">
-                                        {{ $previewAddMode }}
+                                        <iframe src="{{ route('storage') }}/{{ $previewAddMode }}" width="100%" height="300"></iframe>
                                     </div>
                                 </div>
                             @endif
@@ -167,9 +167,6 @@
                     <span class="uk-icon" data-uk-icon="icon: album; ratio: 2"></span>
                 </div>
                 <h2>{{ __('lanAgreementClean') }}</h2>
-                <div class="uk-button-card uk-button">
-                    <a href="{{ route('agreement') }}?create=1">{{ __('LanCreateAgreement') }}</a>
-                </div>
             </div>
         </div>
     @endif
@@ -183,8 +180,7 @@
                     </div>
                     @if($agreement['cover_path'])
                         <div class="uk-image uk-document-name">
-                            {{ $agreement->cover_path }}
-                            <iframe src="{{ route('storage') }}/{{ $agreement->cover_path }}" width="700" height="400"></iframe>
+                            <iframe src="{{ route('storage') }}/{{ $agreement->cover_path }}" width="100%" height="300"></iframe>
                         </div>
                     @endif
                     <div class="uk-content">
@@ -216,4 +212,11 @@
             </div>
         @endforeach
     </div>
+
+    <div class="uk-text-center uk-margin-top">
+        <div class="uk-button-card uk-button">
+            <a href="{{ route('agreement') }}?create=1">{{ __('LanCreateAgreement') }}</a>
+        </div>
+    </div>
+
 </div>
