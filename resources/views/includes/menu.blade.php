@@ -83,6 +83,13 @@
                         </a>
                     </li>
                 @endif
+                @if (Auth::user()->role_id == 3)
+                    <li>
+                        <a href="{{ route('agreement') }}">
+                            <span data-uk-icon="album"></span> {{ __('LanListAgreement') }}
+                        </a>
+                    </li>
+                @endif
             </ul>
             <hr />
             <form method="POST" action="{{ route('logout') }}">
