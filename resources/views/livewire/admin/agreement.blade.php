@@ -53,6 +53,7 @@
                                     <input type="text" wire:model.defer="name" class="uk-input">
                                 </div>
                             </div>
+                            {{-- Test --}}
                             @if ($previewMode)
                                 <div class="uk-grid-margin uk-first-column">
                                     <div class="uk-previe">
@@ -66,6 +67,7 @@
                                     </div>
                                 </div>
                             @endif
+                            {{-- Test --}}
                             <div class="uk-grid-margin uk-first-column">
                                 <div class="uk-placeholder uk-placeholder-upload uk-text-center">
                                     <span class="uk-icon" data-uk-icon="icon: cloud-upload" wire:ignore></span>
@@ -118,6 +120,7 @@
                                     <input type="text" wire:model.defer="name" class="uk-input">
                                 </div>
                             </div>
+                            {{-- Test --}}
                             @if ($previewAddMode)
                                 <div class="uk-grid-margin uk-first-column">
                                     <div class="uk-previe" wire:loading.class="bg-gray">
@@ -125,6 +128,7 @@
                                     </div>
                                 </div>
                             @endif
+                            {{-- Test --}}
                                 <div class="uk-grid-margin uk-first-column">
                                     <div class="uk-placeholder uk-placeholder-upload uk-text-center">
                                         <span class="uk-icon" data-uk-icon="icon: cloud-upload" wire:ignore></span>
