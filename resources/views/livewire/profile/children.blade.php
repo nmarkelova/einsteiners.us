@@ -1,7 +1,5 @@
 <div>
 
-    qq
-
     @if ($confirmGuest)
         <div id="guestevent" class="uk-modal uk-modal-event uk-open uk-flex-top" style="display: flex" data-uk-modal>
             <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body uk-animation-slide-top">
