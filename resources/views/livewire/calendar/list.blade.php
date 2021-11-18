@@ -401,6 +401,9 @@
                         <br />
                         <br />
                         <hr />
+
+                        <livewire:view.agreement-component>
+
                         <div>
                             <label>
                                 <input wire:model.defer="liability" class="uk-checkbox" type="checkbox" required>

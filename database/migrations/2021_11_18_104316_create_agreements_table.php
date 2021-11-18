@@ -19,6 +19,24 @@ class CreateAgreementsTable extends Migration
             $table->string('cover_path', 2048)->nullable();
             $table->timestamps();
         });
+
+        DB::table('agreements')->insert([
+            'name' => 'Waiver and Release of Liability',
+            'cover_path' => 'upload/agreement/WaiverAndReleaseOfLiability.pdf',
+        ]);
+        DB::table('agreements')->insert([
+            'name' => 'Covid 19 - Health Screening Form',
+            'cover_path' => 'upload/agreement/COVID-19HealthScreeningForm.pdf',
+        ]);
+        DB::table('agreements')->insert([
+            'name' => 'Covid 19 - Waiver',
+            'cover_path' => 'upload/agreement/COVID-19LiabilityWaiver.pdf',
+        ]);
+        DB::table('agreements')->insert([
+            'name' => 'Photo release',
+            'cover_path' => 'upload/agreement/PhotoRelease.pdf',
+        ]);
+
     }
 
     /**
