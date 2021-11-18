@@ -156,7 +156,7 @@
         @endif
     @endif
 
-    @if(count($events) == 0)
+    @if(count($agreements) == 0)
         <div class="uk-screen-clean uk-flex uk-flex-middle uk-flex-center">
             <div class="uk-text-center">
                 <div>
@@ -172,20 +172,14 @@
     @endif
 
     <div class="uk-grid uk-grid-small uk-child-width-1-1@m" data-uk-grid>
-        @foreach ($events as $event)
-            <div id="element-{{ $event->id }}">
+        @foreach ($agreements as $agreement)
+            <div id="element-{{ $agreement->id }}">
                 <div class="uk-panel">
-                    <div class="uk-loading" wire:loading.flex wire:target="delete({{ $event->id }})">
+                    <div class="uk-loading" wire:loading.flex wire:target="delete({{ $agreement->id }})">
                         <span data-uk-spinner></span>
                     </div>
-                    @if($event['cover_path'])
-                        <div class="uk-image" data-src="{{ route('storage') }}/{{ $event->cover_path }}" data-uk-img>
-                            @if($event['reviewed'] > 0)
-                                <div class="uk-view uk-flex uk-flex-middle uk-button uk-button-symbol" data-uk-tooltip="title: {{ __('LanRew') }}; pos: bottom">
-                                    <span class="uk-icon" data-uk-icon="play-circle"></span> <span>{{ $event->reviewed }}</span>
-                                </div>
-                            @endif
-                        </div>
+                    @if($agreement['cover_path'])
+                        <div class="uk-image" data-src="{{ route('storage') }}/{{ $agreement->cover_path }}" data-uk-img></div>
                     @endif
                     <div class="uk-content">
                         <div class="uk-grid uk-flex uk-flex-middle" data-uk-grid>
@@ -194,15 +188,15 @@
                                     <div>
                                         <div class="uk-grid uk-grid-small uk-flex uk-flex-middle" data-uk-grid>
                                             <div>
-                                                <h2>{{ $event->name }}</h2>  
+                                                <h2>{{ $agreement->name }}</h2>  
                                             </div>
                                             <div>
-                                                <button class="uk-button uk-button-symbol" wire:click="edit({{ $event->id }})" data-uk-tooltip="title: {{ __('LanEdit') }}; pos: bottom">
+                                                <button class="uk-button uk-button-symbol" wire:click="edit({{ $agreement->id }})" data-uk-tooltip="title: {{ __('LanEdit') }}; pos: bottom">
                                                     <span class="uk-icon uk-update" data-uk-icon="icon: pencil" wire:ignore></span>
                                                 </button>
                                             </div>
                                             <div>
-                                                <button class="uk-button uk-button-symbol" wire:click="deleteConfirm({{ $event->id }})" data-uk-tooltip="title: {{ __('LanDelete') }}; pos: bottom">
+                                                <button class="uk-button uk-button-symbol" wire:click="deleteConfirm({{ $agreement->id }})" data-uk-tooltip="title: {{ __('LanDelete') }}; pos: bottom">
                                                     <span class="uk-icon uk-update" data-uk-icon="icon: trash" wire:ignore></span>
                                                 </button>
                                             </div>
