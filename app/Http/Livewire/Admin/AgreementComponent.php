@@ -13,6 +13,14 @@ class AgreementComponent extends Component
 {
     use WithFileUploads;
     public $agreements, $name, $cover_path;
+    public $cover_add;
+    public $selected_id = null;
+    public $updateMode = false;
+    public $createMode = false;
+    public $previewMode = false;
+    public $previewAddMode = false;
+    public $confirmEvent = false;
+    public $upgradeUpload = false;
 
     public function render()
     {

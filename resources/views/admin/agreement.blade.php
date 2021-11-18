@@ -1,7 +1,6 @@
 @extends('../template/layout')
 @section('ogmeta')
     <meta property="og:url" content="<?echo url('/');?>/">
-@endsection
     <meta property="og:title" content="Документы - Einsteiners - Сервис организации мероприятий">
     <meta property="og:description" content="Документы - Einsteiners - Сервис организации мероприятий">
     <meta property="og:image" content="<?echo url('/');?>/images/ogimage.jpg">
@@ -10,7 +9,6 @@
     
 @endsection
 @section('header')
-@endsection
     <title>Документы - Einsteiners - Сервис организации мероприятий</title>     
     <meta name="description" content="Описание"/>
     <meta name="keywords" content="Ключевые слова"/>
