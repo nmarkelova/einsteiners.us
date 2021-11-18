@@ -184,6 +184,7 @@
                     @if($agreement['cover_path'])
                         <div class="uk-image uk-document-name">
                             {{ $agreement->cover_path }}
+                            <iframe src="{{ route('storage') }}/{{ $agreement->cover_path }}" width="700" height="400"></iframe>
                         </div>
                     @endif
                     <div class="uk-content">
