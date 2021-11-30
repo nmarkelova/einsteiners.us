@@ -1,0 +1,31 @@
+version: "3.3"
+
+services:
+
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - 8080:80
+    links:
+      - fpm
+    volumes:
+      - ./:/var/www/einsteiners
+  fpm:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    links: 
+      - mysql
+    volumes:
+      - ./:/var/www/einsteiners
+  mysql:
+    #platform: linux/x86_64
+    #image: mysql:5.7
+    image: mariadb:10.5.8
+    ports: 
+      - 33060:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MASQL_DATABESE=einsteiners
