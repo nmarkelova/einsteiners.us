@@ -1,8 +1,8 @@
 FROM ubuntu:21.04
 
-LABEL maintainer="Taylor Otwell"
+LABEL maintainer="Einsteiners App"
 
-ARG WWWGROUP
+ARG WWWGROUP=1337
 ARG NODE_VERSION=16
 
 WORKDIR /var/www/html
@@ -53,6 +53,18 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY php.ini /etc/php/8.0/cli/conf.d/99-sail.ini
 RUN chmod +x /usr/local/bin/start-container
 
+RUN git clone https://github.com/einsteinersnet/einsteiners.net.git ./
+RUN php artisan storage:link
+RUN cp .env.example .env
+RUN php artisan key:generate
+RUN php artisan cache:clear
+RUN php artisan config:clear
+RUN php artisan route:clear
+RUN php artisan view:clear
+RUN php artisan log:clear
+# RUN php artisan migrate
+
 EXPOSE 8000
 
-ENTRYPOINT ["start-container"]
+CMD ["php", "./artisan", "serve", "--host=0.0.0.0"]
+# ENTRYPOINT ["start-container"]
