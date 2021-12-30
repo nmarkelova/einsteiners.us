@@ -67,6 +67,13 @@
             <x-jet-input-error for="email" class="mt-2" />
         </div>
 
+        <!-- Vaccine -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="vaccine" value="{{ __('LangVaccine') }}" />
+            <x-jet-input id="vaccine" type="text" class="mt-1 block w-full" wire:model.defer="state.vaccine" onFocus="maskPhone.call(this);" placeholder="__.__.____"/>
+            <x-jet-input-error for="vaccine" class="mt-2" />
+        </div>
+
         <!-- Children -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label value="Children" />
