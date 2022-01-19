@@ -110,7 +110,7 @@ jobs:
             BUILD_REVISION=${{ github.sha }}
             BUILD_VERSION=${{ github.sha }}
             BUILD_REPO=${{ steps.set_variables.outputs.BUILD_REPO }}
-          target: app
+          # target: app
           push: true
           tags: |
             ghcr.io/einsteinersnet/${{ steps.set_variables.outputs.BUILD_REPO }}-app:${{ steps.set_variables.outputs.BUILD_RELEASE }}
