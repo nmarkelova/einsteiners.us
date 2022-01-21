@@ -54,14 +54,14 @@ COPY ./docker/php.ini /etc/php/8.0/cli/conf.d/99-sail.ini
 RUN chmod +x /usr/local/bin/start-container
 
 RUN git clone https://github.com/einsteinersnet/einsteiners.net.git ./
-RUN php artisan storage:link
+# RUN php artisan storage:link
 RUN cp .env.example .env
-RUN php artisan key:generate
-RUN php artisan cache:clear
-RUN php artisan config:clear
-RUN php artisan route:clear
-RUN php artisan view:clear
-RUN php artisan log:clear
+# RUN php artisan key:generate
+# RUN php artisan cache:clear
+# RUN php artisan config:clear
+# RUN php artisan route:clear
+# RUN php artisan view:clear
+# RUN php artisan log:clear
 # RUN php artisan migrate
 
 EXPOSE 8000
