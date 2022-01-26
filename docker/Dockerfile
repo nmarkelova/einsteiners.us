@@ -1,9 +1,10 @@
 FROM ubuntu:21.04
 
 LABEL maintainer="Laravel App"
+LABEL org.opencontainers.image.source="https://github.com/einsteiners.net/${BUILD_REPO}"
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
-ENV TZ=UTC
+ENV TZ=Europe/Moscow
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update
