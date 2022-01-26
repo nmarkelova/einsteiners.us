@@ -1,7 +1,7 @@
 FROM ubuntu:21.04
 
 LABEL maintainer="Laravel App"
-LABEL org.opencontainers.image.source="https://github.com/einsteiners.net/${BUILD_REPO}"
+LABEL org.opencontainers.image.source="https://github.com/einsteinersnet/einsteiners.net"
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV TZ=Europe/Moscow
