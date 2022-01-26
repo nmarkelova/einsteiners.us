@@ -19,5 +19,5 @@ jobs:
         with:
           config-name: actions/release-drafter/release-drafter.yml
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GCR_TOKEN }}
           
