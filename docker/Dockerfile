@@ -22,7 +22,8 @@ RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get install -y nodejs \
     && npm install -g npm
 
-RUN cp .env.example .env
+#RUN cp .env.example .env
+RUN mkdir config_env && cp .env.example config_env/.env && ln -s config_env/.env
 RUN php artisan storage:link
 RUN php artisan key:generate
 
