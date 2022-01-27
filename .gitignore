@@ -2,7 +2,9 @@
 /public/hot
 /database
 /storage/*.key
+/vendor
 .env
+docker-compose.yml
 .env.backup
 .phpunit.result.cache
 Homestead.json
