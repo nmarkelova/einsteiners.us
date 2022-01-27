@@ -1,16 +1,19 @@
 <!DOCTYPE HTML>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" prefix="og: http://ogp.me/ns#">
+
+    <? /* {{ route('home') }} => // */ ?>
+
     <head>
         <? /* Component: Common ====================================================*/ ?>
         @yield('header')
-        <base href="{{ route('home') }}/"/>
+        <base href="/"/>
         <meta name="Robots" content="index, follow">
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="rights" content="© 2020 «Свебикс»"/>
         <meta name="author" content="Свебикс"/>
         <? /* Component: Common ====================================================*/ ?>
         <? /* Component: POW ====================================================*/ ?>
-        {{--<link rel="manifest" href="{{ route('home') }}/manifest.json">--}}
+        {{--<link rel="manifest" href="//manifest.json">--}}
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="application-name" content="Einsteiners">
@@ -18,36 +21,36 @@
         <meta name="theme-color" content="#5ec9de"/>
         <meta name="msapplication-navbutton-color" content="#5ec9de">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="msapplication-starturl" content="{{ route('home') }}/">
+        <meta name="msapplication-starturl" content="/">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <? /* Component: POW ====================================================*/ ?>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <? /* Component: Icon ====================================================*/ ?>
-        <link rel="icon" type="image/png" href="{{ route('home') }}/images/icon/favicon-16x16.png" sizes="16x16">
-        <link rel="icon" type="image/png" href="{{ route('home') }}/images/icon/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="{{ route('home') }}/images/icon/favicon-96x96.png" sizes="96x96">
-        <link rel="icon" type="image/png" href="{{ route('home') }}/images/icon/favicon-192x192.png" sizes="192x192">
-        <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="{{ route('home') }}/images/icon/favicon-57x57.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="{{ route('home') }}/images/icon/favicon-60x60.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="{{ route('home') }}/images/icon/favicon-72x72.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="{{ route('home') }}/images/icon/favicon-76x76.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="{{ route('home') }}/images/icon/favicon-114x114.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="{{ route('home') }}/images/icon/favicon-120x120.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="{{ route('home') }}/images/icon/favicon-144x144.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="{{ route('home') }}/images/icon/favicon-152x152.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="{{ route('home') }}/images/icon/favicon-180x180.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="{{ route('home') }}/images/icon/favicon-192x192.png">
-        <meta name="msapplication-square70x70logo" content="{{ route('home') }}/images/icon/favicon-70x70.png">
-        <meta name="msapplication-square150x150logo" content="{{ route('home') }}/images/icon/favicon-150x150.png">
+        <link rel="icon" type="image/png" href="//images/icon/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="//images/icon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="//images/icon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="//images/icon/favicon-192x192.png" sizes="192x192">
+        <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="//images/icon/favicon-57x57.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="//images/icon/favicon-60x60.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="//images/icon/favicon-72x72.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="//images/icon/favicon-76x76.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="//images/icon/favicon-114x114.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="//images/icon/favicon-120x120.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="//images/icon/favicon-144x144.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="//images/icon/favicon-152x152.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="//images/icon/favicon-180x180.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="//images/icon/favicon-192x192.png">
+        <meta name="msapplication-square70x70logo" content="//images/icon/favicon-70x70.png">
+        <meta name="msapplication-square150x150logo" content="//images/icon/favicon-150x150.png">
         {{--
-        <meta name="msapplication-wide310x150logo" content="{{ route('home') }}/images/icon/favicon-310x150.png">
+        <meta name="msapplication-wide310x150logo" content="//images/icon/favicon-310x150.png">
         --}}
-        <meta name="msapplication-square310x310logo" content="{{ route('home') }}/images/icon/favicon-310x310.png">
+        <meta name="msapplication-square310x310logo" content="//images/icon/favicon-310x310.png">
         <? /* Component: Icon ====================================================*/ ?>
         <? /* Component: Preload ====================================================*/ ?>
-        <link rel="preload" href="{{ route('home') }}/fonts/Montserrat/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-        <link rel="preload" href="{{ route('home') }}/fonts/Montserrat/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-        <link rel="preload" href="{{ route('home') }}/fonts/Montserrat/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+        <link rel="preload" href="//fonts/Montserrat/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+        <link rel="preload" href="//fonts/Montserrat/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+        <link rel="preload" href="//fonts/Montserrat/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
         <? /* Component: AddScript ====================================================*/ ?>
         <link rel="preload" href="{{ mix('/js/js.min.js') }}" as="script" type="text/javascript"/>
         <? /* Component: AddScript ====================================================*/ ?>
@@ -157,10 +160,10 @@
         @else
             <meta property="og:type" content="website"/>
             <meta property="og:site_name" content="Einsteiners - Сервис организации мероприятий"/>
-            <meta property="og:url" content="{{ route('home') }}/">
+            <meta property="og:url" content="/">
             <meta property="og:title" content="Главная - Einsteiners - Сервис организации мероприятий">
             <meta property="og:description" content="Einsteiners - Сервис организации мероприятий">
-            <meta property="og:image" content="{{ route('home') }}/images/ogimage.jpg">
+            <meta property="og:image" content="//images/ogimage.jpg">
             <meta property="og:image:width" content="1200"/>
             <meta property="og:image:height" content="630"/>
         @endif
@@ -271,7 +274,7 @@
                 </div>
                 <div class="uk-width-1-2@xs">
                     <div class="uk-logo">
-                        <a href="{{ route('home') }}/">
+                        <a href="/">
                             <img src="/images/logo.png">
                         </a>
                     </div>
@@ -293,7 +296,7 @@
                                     @include('includes.social')
                                 </div>
                                 <div class="uk-logo">
-                                    <a href="{{ route('home') }}/">
+                                    <a href="/">
                                         <img src="/images/logo.png">
                                     </a>
                                 </div>
