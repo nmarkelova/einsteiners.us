@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" prefix="og: http://ogp.me/ns#">
-
     <head>
         <? /* Component: Common ====================================================*/ ?>
         @yield('header')
@@ -168,13 +167,13 @@
         <? /* Component: Open Graph ====================================================*/ ?>
     </head>
     <body id="body" onload="load();">
-
+        {{--
         <div id="uk-preload" class="uk-preload">
             <div class="uk-logo-loader">
                 <div class="uk-frame"></div>
             </div>
         </div>
-
+        --}}
         <? /* Component: Modal ====================================================*/ ?>
         <div id="cookie" class="uk-modal-consent" data-uk-modal>
             <div class="uk-modal-dialog uk-margin-auto-vertical" data-uk-scrollspy="cls: uk-animation-shake">
@@ -290,16 +289,19 @@
                     <div class="uk-width-1-4@m">
                         <div class="uk-flex uk-flex-bottom uk-grid-small">
                             <div class="uk-small">
-                                <div class="uk-social" data-src="/images/thame/l-3.png" data-uk-img>
-                                    @include('includes.social')
-                                </div>
+                                <div class="uk-social" data-src="/images/thame/l-3.png" data-uk-img></div>
                                 <div class="uk-logo">
                                     <a href="/">
                                         <img src="/images/logo.png">
                                     </a>
                                 </div>
                             </div>
-                            <div class="uk-text">{{ __('LanTitleSite') }}</div>
+                            <div class="uk-text">
+                                <div class="uk-social-header">
+                                    @include('includes.social')
+                                </div>
+                                {{ __('LanTitleSite') }}
+                            </div>
                         </div>
                     </div>
                     <div class="uk-width-3-4@m">
@@ -543,9 +545,11 @@
         @if(View::hasSection('script'))
             @yield('script')
         @endif
+        {{--
         <script>
             let complite = new CustomEvent("complite", {bubbles: true,});document.querySelector("#uk-preload").dispatchEvent(complite);
         </script>
+        --}}
         @livewireScripts
     </body>
 </html>
