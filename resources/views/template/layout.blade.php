@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" prefix="og: http://ogp.me/ns#">
 
-    <? /* {{ route('home') }} => // */ ?>
-
     <head>
         <? /* Component: Common ====================================================*/ ?>
         @yield('header')
