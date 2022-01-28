@@ -11,7 +11,7 @@
         <meta name="author" content="Свебикс"/>
         <? /* Component: Common ====================================================*/ ?>
         <? /* Component: POW ====================================================*/ ?>
-        {{--<link rel="manifest" href="//manifest.json">--}}
+        {{--<link rel="manifest" href="/manifest.json">--}}
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="application-name" content="Einsteiners">
@@ -24,31 +24,31 @@
         <? /* Component: POW ====================================================*/ ?>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <? /* Component: Icon ====================================================*/ ?>
-        <link rel="icon" type="image/png" href="//images/icon/favicon-16x16.png" sizes="16x16">
-        <link rel="icon" type="image/png" href="//images/icon/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="//images/icon/favicon-96x96.png" sizes="96x96">
-        <link rel="icon" type="image/png" href="//images/icon/favicon-192x192.png" sizes="192x192">
-        <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="//images/icon/favicon-57x57.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="//images/icon/favicon-60x60.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="//images/icon/favicon-72x72.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="//images/icon/favicon-76x76.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="//images/icon/favicon-114x114.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="//images/icon/favicon-120x120.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="//images/icon/favicon-144x144.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="//images/icon/favicon-152x152.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="//images/icon/favicon-180x180.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="//images/icon/favicon-192x192.png">
-        <meta name="msapplication-square70x70logo" content="//images/icon/favicon-70x70.png">
-        <meta name="msapplication-square150x150logo" content="//images/icon/favicon-150x150.png">
+        <link rel="icon" type="image/png" href="/images/icon/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/images/icon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/images/icon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/images/icon/favicon-192x192.png" sizes="192x192">
+        <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="/images/icon/favicon-57x57.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="/images/icon/favicon-60x60.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="/images/icon/favicon-72x72.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="/images/icon/favicon-76x76.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="/images/icon/favicon-114x114.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="/images/icon/favicon-120x120.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="/images/icon/favicon-144x144.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="/images/icon/favicon-152x152.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/images/icon/favicon-180x180.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/images/icon/favicon-192x192.png">
+        <meta name="msapplication-square70x70logo" content="/images/icon/favicon-70x70.png">
+        <meta name="msapplication-square150x150logo" content="/images/icon/favicon-150x150.png">
         {{--
-        <meta name="msapplication-wide310x150logo" content="//images/icon/favicon-310x150.png">
+        <meta name="msapplication-wide310x150logo" content="/images/icon/favicon-310x150.png">
         --}}
-        <meta name="msapplication-square310x310logo" content="//images/icon/favicon-310x310.png">
+        <meta name="msapplication-square310x310logo" content="/images/icon/favicon-310x310.png">
         <? /* Component: Icon ====================================================*/ ?>
         <? /* Component: Preload ====================================================*/ ?>
-        <link rel="preload" href="//fonts/Montserrat/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-        <link rel="preload" href="//fonts/Montserrat/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-        <link rel="preload" href="//fonts/Montserrat/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+        <link rel="preload" href="/fonts/Montserrat/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+        <link rel="preload" href="/fonts/Montserrat/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+        <link rel="preload" href="/fonts/Montserrat/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
         <? /* Component: AddScript ====================================================*/ ?>
         <link rel="preload" href="{{ mix('/js/js.min.js') }}" as="script" type="text/javascript"/>
         <? /* Component: AddScript ====================================================*/ ?>
@@ -161,7 +161,7 @@
             <meta property="og:url" content="/">
             <meta property="og:title" content="Главная - Einsteiners - Сервис организации мероприятий">
             <meta property="og:description" content="Einsteiners - Сервис организации мероприятий">
-            <meta property="og:image" content="//images/ogimage.jpg">
+            <meta property="og:image" content="/images/ogimage.jpg">
             <meta property="og:image:width" content="1200"/>
             <meta property="og:image:height" content="630"/>
         @endif

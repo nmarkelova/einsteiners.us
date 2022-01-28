@@ -40,7 +40,6 @@
     <div class="uk-inline">
         <div class="uk-cover-container uk-flex uk-flex-middle uk-flex-center">
             <video loop muted playsinline data-uk-video="autoplay: inview">
-                <source src="/storage/upload/content/background.webm" type="video/webm">
                 <source src="/storage/upload/content/background.mp4" type="video/mp4">
             </video>
         </div>
@@ -73,9 +72,6 @@
     <div class="uk-inline uk-text-center">
         <div class="uk-cover-container uk-flex uk-flex-middle uk-flex-center">
             <video loop muted playsinline data-uk-video="autoplay: inview">
-                {{--
-                <source src="/storage/upload/content/background.webm" type="video/webm">
-                --}}
                 <source src="/storage/upload/content/background.mp4" type="video/mp4">
             </video>
         </div>
