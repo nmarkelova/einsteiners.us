@@ -59,6 +59,9 @@ use App\Models\Payment;
         Route::get('/help', function () {
             return view('page/help');
         })->name('help');
+        Route::get('/birtrhday', function () {
+            return view('page/birtrhday');
+        })->name('birtrhday');
         Route::get('/conditions', function () {
             return view('page/conditions');
         })->name('conditions');

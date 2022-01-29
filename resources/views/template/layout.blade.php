@@ -297,7 +297,7 @@
                                 </div>
                             </div>
                             <div class="uk-text">
-                                <div class="uk-social-header">
+                                <div class="uk-social-header uk-margin-bottom">
                                     @include('includes.social')
                                 </div>
                                 {{ __('LanTitleSite') }}
@@ -326,9 +326,14 @@
                                                 <a href="{{ route('help') }}">{{ __('LanHelp') }}</a>
                                             </li>
                                             --}}
+                                            <li class="{{ request()->is('birtrhday') ? 'uk-active' : null }}">
+                                                <a href="{{ route('birtrhday') }}">{{ __('LanBirtrhday') }}</a>
+                                            </li>
+                                            {{--
                                             <li class="{{ request()->is('conditions') ? 'uk-active' : null }}">
                                                 <a href="{{ route('conditions') }}">{{ __('LanConditions') }}</a>
                                             </li>
+                                            --}}
                                             <li class="{{ request()->is('contact') ? 'uk-active' : null }}">
                                                 <a href="{{ route('contact') }}">{{ __('LanContact') }}</a>
                                             </li>
