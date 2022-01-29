@@ -504,15 +504,19 @@
                                 --}}
                             </div>
                             <div class="uk-width-2-5@m uk-flex uk-flex-right">
-                                <div class="uk-button">
-                                    @if (Route::has('login'))
-                                        @auth
-                                            <a href="{{ route('personal-events') }}?create=1">{{ __('LanCreateEvent') }}</a>
-                                        @else
-                                            <a href="{{ route('login') }}">{{ __('LanCreateEvent') }}</a>
-                                        @endauth
-                                    @endif
-                                </div>
+                                @if(Route::is('list'))
+                                    <div class="uk-button">
+                                        @if (Route::has('login'))
+                                            @auth
+                                                <a href="{{ route('personal-events') }}?create=1">{{ __('LanCreateEvent') }}</a>
+                                            @else
+                                                <a href="{{ route('login') }}">{{ __('LanCreateEvent') }}</a>
+                                            @endauth
+                                        @endif
+                                    </div>
+                                @else
+
+                                @endif
                             </div>
                         </div>
 
