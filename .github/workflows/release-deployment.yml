@@ -113,7 +113,7 @@ jobs:
             BUILD_REVISION=${{ github.sha }}
             BUILD_VERSION=${{ github.sha }}
             BUILD_REPO=${{ steps.set_variables.outputs.BUILD_REPO }}
-            GITHUB_REPOSITORY=${{ env.GITHUB_REPOSITORY }}
+            GITHUB_REPOSITORY=${GITHUB_REPOSITORY}
           # target: app
           push: true
           tags: |
