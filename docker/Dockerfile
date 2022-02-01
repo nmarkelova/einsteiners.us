@@ -5,7 +5,7 @@ ARG BUILD_OWNER_REPO
 ARG GIT_FOLDER=/var/www/html
 
 LABEL maintainer="Laravel App"
-LABEL org.opencontainers.image.source="https://github.com/${BUILD_OWNER_REPO}"
+LABEL org.opencontainers.image.source="https://github.com/IvanKuchin/${BUILD_REPO}"
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV TZ=Europe/Moscow
