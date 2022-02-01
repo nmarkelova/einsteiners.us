@@ -42,7 +42,7 @@ jobs:
         id: deployment
         with:
           step: start
-          token: ${{ secrets.GHCR_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           env: release
 
      #############################
@@ -93,7 +93,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GHCR_TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       ####################################
       # Replace variables in Dockerfiles #
@@ -131,6 +131,6 @@ jobs:
         if: always()
         with:
           step: finish
-          token: ${{ secrets.GHCR_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           status: ${{ job.status }}
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
