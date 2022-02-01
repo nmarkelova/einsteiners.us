@@ -1,11 +1,11 @@
 FROM ubuntu:21.04
 
 ARG BUILD_REPO
-ARG GITHUB_REPOSITORY
+ARG BUILD_OWNER_REPO
 ARG GIT_FOLDER=/var/www/html
 
 LABEL maintainer="Laravel App"
-LABEL org.opencontainers.image.source="https://github.com/${GITHUB_REPOSITORY}"
+LABEL org.opencontainers.image.source="https://github.com/${BUILD_OWNER_REPO}"
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV TZ=Europe/Moscow
