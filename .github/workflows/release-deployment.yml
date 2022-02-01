@@ -113,12 +113,13 @@ jobs:
             BUILD_REVISION=${{ github.sha }}
             BUILD_VERSION=${{ github.sha }}
             BUILD_REPO=${{ steps.set_variables.outputs.BUILD_REPO }}
+            GITHUB_REPOSITORY=${{ env.GITHUB_REPOSITORY }}
           # target: app
           push: true
           tags: |
-            ghcr.io/einsteinersnet/${{ steps.set_variables.outputs.BUILD_REPO }}-app:${{ steps.set_variables.outputs.BUILD_RELEASE }}
-            ghcr.io/einsteinersnet/${{ steps.set_variables.outputs.BUILD_REPO }}-app:${{ steps.set_variables.outputs.BUILD_RELEASE_MAJOR }}
-            ghcr.io/einsteinersnet/${{ steps.set_variables.outputs.BUILD_REPO }}-app:latest
+            ghcr.io/ivankuchin/${{ steps.set_variables.outputs.BUILD_REPO }}-app:${{ steps.set_variables.outputs.BUILD_RELEASE }}
+            ghcr.io/ivankuchin/${{ steps.set_variables.outputs.BUILD_REPO }}-app:${{ steps.set_variables.outputs.BUILD_RELEASE_MAJOR }}
+            ghcr.io/ivankuchin/${{ steps.set_variables.outputs.BUILD_REPO }}-app:latest
       ##########################
       # Stop deployment        #
       ##########################
