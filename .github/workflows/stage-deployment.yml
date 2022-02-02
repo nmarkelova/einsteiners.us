@@ -10,7 +10,7 @@
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions
 #
 
-name: Release deployment
+name: Stage deployment
 
 #######################################
 # Start the job on all push to master #
@@ -124,8 +124,8 @@ jobs:
           # target: app
           push: true
           tags: |
-            ghcr.io/${{ steps.set_variables.outputs.BUILD_OWNER_REPO }}-stage:${{ steps.set_variables.outputs.BUILD_DATE_SQUEEZED }}
-            ghcr.io/${{ steps.set_variables.outputs.BUILD_OWNER_REPO }}-stage:latest
+            ghcr.io/ivankuchin/${{ steps.set_variables.outputs.BUILD_REPO }}-stage:${{ steps.set_variables.outputs.BUILD_DATE_SQUEEZED }}
+            ghcr.io/ivankuchin/${{ steps.set_variables.outputs.BUILD_REPO }}-stage:latest
       ##########################
       # Stop deployment        #
       ##########################
