@@ -38,13 +38,13 @@ jobs:
       ##########################
       # Start deployment       #
       ##########################
-      - name: start deployment
-        uses: bobheadxi/deployments@v0.4.3
-        id: deployment
-        with:
-          step: start
-          token: ${{ secrets.GITHUB_TOKEN }}
-          env: staging
+      #- name: start deployment
+      #  uses: bobheadxi/deployments@v0.4.3
+      #  id: deployment
+      #  with:
+      #    step: start
+      #    token: ${{ secrets.GITHUB_TOKEN }}
+      #    env: staging
 
      #############################
      # Init deployment variables #
