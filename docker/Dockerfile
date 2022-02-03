@@ -8,9 +8,16 @@ LABEL maintainer="Ivan Kuchin"
 LABEL org.opencontainers.image.source="https://github.com/${BUILD_OWNER_REPO}"
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
+
+#####################
+# changing timezone #
+#####################
 ENV TZ=Europe/Moscow
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+##############################
+# install basic dependencies #
+##############################
 RUN apt-get update
 RUN apt-get install -y php7.4 php7.4-fpm php7.4-mysql php7.4-mbstring php7.4-xml php7.4-bcmath
 RUN apt-get update
@@ -18,16 +25,35 @@ RUN apt-get install -y gosu curl ca-certificates zip unzip git supervisor sqlite
 
 WORKDIR ${GIT_FOLDER}
 
+###################
+# copy sorce code #
+###################
 #RUN git clone https://github.com/einsteinersnet/einsteiners.net.git ./
 COPY . ${GIT_FOLDER}
+
+##################
+# save commit id #
+##################
+RUN git rev-parse HEAD > ./public/git_commit_id
+
+#########################
+# composer dependencies #
+#########################
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && composer update
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get install -y nodejs \
     && npm install -g npm
 
-#RUN cp .env.example .env
+###########################################
+# move config file to separate dircetory  #
+# this will help to mount it from k8s     #
+###########################################
 RUN mkdir config_env && cp .env.example config_env/.env && ln -s config_env/.env
+
+########################
+# laravel dependencies #
+########################
 RUN php artisan storage:link
 RUN php artisan key:generate
 
