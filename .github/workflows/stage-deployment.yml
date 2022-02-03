@@ -126,7 +126,7 @@ jobs:
             BUILD_OWNER_REPO=${{ steps.set_variables.outputs.BUILD_OWNER_REPO }}
             BUILD_COMMIT_SHA_1=${{ env.BUILD_COMMIT_SHA }}
             BUILD_COMMIT_SHA_2=${{ github.event.pull_request.head.sha }}
-            BUILD_COMMIT_SHA_3=${{ GITHUB_SHA }}
+            BUILD_COMMIT_SHA_3=${GITHUB_SHA}
 
           # target: app
           push: true
