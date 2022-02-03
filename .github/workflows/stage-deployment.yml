@@ -66,6 +66,8 @@ jobs:
           echo $BUILD_DATE_SQUEEZED
           echo $BUILD_REPO
           echo $BUILD_OWNER_REPO
+          echo $BUILD_COMMIT_SHA
+          echo ${GITHUB_SHA}
         env:
           BUILD_RELEASE: ${{ steps.set_variables.outputs.BUILD_RELEASE }}
           BUILD_RELEASE_MAJOR: ${{ steps.set_variables.outputs.BUILD_RELEASE_MAJOR }}
@@ -73,6 +75,7 @@ jobs:
           BUILD_DATE_SQUEEZED: ${{ steps.set_variables.outputs.BUILD_DATE_SQUEEZED }}
           BUILD_REPO: ${{ steps.set_variables.outputs.BUILD_REPO }}
           BUILD_OWNER_REPO: ${{ steps.set_variables.outputs.BUILD_OWNER_REPO }}
+          BUILD_COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
 
       ##########################
       # Checkout the code base #
@@ -114,13 +117,14 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./docker/Dockerfile
+          file: ./docker/Dockerfile_test
           build-args: |
             BUILD_DATE=${{ env.BUILD_DATE }}
             BUILD_REVISION=${{ github.sha }}
             BUILD_VERSION=${{ github.sha }}
             BUILD_REPO=${{ steps.set_variables.outputs.BUILD_REPO }}
             BUILD_OWNER_REPO=${{ steps.set_variables.outputs.BUILD_OWNER_REPO }}
+            BUILD_COMMIT_SHA=${{ steps.set_variables.outputs.BUILD_COMMIT_SHA }}
           # target: app
           push: true
           tags: |
