@@ -2,6 +2,7 @@ FROM ubuntu:21.04
 
 ARG BUILD_REPO
 ARG BUILD_OWNER_REPO
+ARG BUILD_COMMIT_SHA=""
 ARG GIT_FOLDER=/var/www/html
 
 LABEL maintainer="Ivan Kuchin"
@@ -34,7 +35,8 @@ COPY . ${GIT_FOLDER}
 ##################
 # save commit id #
 ##################
-RUN git rev-parse HEAD > ./public/git_commit_id
+RUN echo ${BUILD_COMMIT_SHA}
+RUN echo ${BUILD_COMMIT_SHA} > ./public/git_commit_id
 
 #########################
 # composer dependencies #
