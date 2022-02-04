@@ -35,7 +35,6 @@ COPY . ${GIT_FOLDER}
 ##################
 # save commit id #
 ##################
-RUN echo ${BUILD_COMMIT_SHA}
 RUN echo ${BUILD_COMMIT_SHA} > ./public/git_commit_id
 
 #########################
