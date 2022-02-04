@@ -123,8 +123,14 @@ jobs:
             BUILD_VERSION=${{ github.sha }}
             BUILD_REPO=${{ steps.set_variables.outputs.BUILD_REPO }}
             BUILD_OWNER_REPO=${{ steps.set_variables.outputs.BUILD_OWNER_REPO }}
-            BUILD_COMMIT_SHA_1=${{ github.event.pull_request.head.sha }}
-            BUILD_COMMIT_SHA_2=${{ github.sha }}
+            ##################################################################################################################
+            # with PR:                                                                                                       #
+            # 1-st option will take last commit to the HEAD-branch                                                           #
+            # 2-nd option will take merge commit                                                                             #
+            # more info here: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request  #
+            ##################################################################################################################
+            BUILD_COMMIT_SHA=${{ github.event.pull_request.head.sha }}
+            # BUILD_COMMIT_SHA=${{ github.sha }}
 
           # target: app
           push: true
