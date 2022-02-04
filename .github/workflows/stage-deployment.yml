@@ -16,7 +16,7 @@ name: Stage deployment
 # Start the job on all push to master #
 #######################################
 on:
-  pull_request:
+  pull_request_target:
     branches: [master]
     types: [opened, reopened, synchronize]
 
