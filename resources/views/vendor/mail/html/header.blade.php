@@ -4,7 +4,7 @@
 @if (trim($slot) === 'Laravel')
 <img src="https://laravel.com/img/notification-logo.png" class="logo" alt="Laravel Logo">
 @else
-<img src="https://einsteiners.net/images/logo.png" class="logo" alt="Laravel Logo">
+<img src="https://einsteiners.us/images/logo.png" class="logo" alt="Laravel Logo">
 {{-- $slot --}}
 @endif
 </a>

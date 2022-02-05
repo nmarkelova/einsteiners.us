@@ -14,7 +14,7 @@
     <li>• Preparing and sending responses to my requests</li>
     <li>• Sending information to my address, including advertising, about the events/goods/services/works of the Operator.</li>
     </ul>
-    <p>This consent is valid until it is revoked by sending a corresponding notification to the email address info@einsteiners.net. If I withdraw my consent to the processing of personal data, the Operator has the right to continue processing personal data without my consent if there are grounds specified in paragraphs 2-11 of part 1 of Article 6, part 2 of Article 10 and part 2 of Article 11 of Federal Law No. 152-FZ" On Personal Data " of 26.06.2006.</p>
+    <p>This consent is valid until it is revoked by sending a corresponding notification to the email address info@einsteiners.us. If I withdraw my consent to the processing of personal data, the Operator has the right to continue processing personal data without my consent if there are grounds specified in paragraphs 2-11 of part 1 of Article 6, part 2 of Article 10 and part 2 of Article 11 of Federal Law No. 152-FZ" On Personal Data " of 26.06.2006.</p>
     <hr>
     <h2>Site Usage Agreement</h2>
     <p><strong>Thank you for visiting our project!</strong></p>
@@ -23,7 +23,7 @@
     <ul>
     <li>1.1. The company - Einsteiners LLC.</li>
     <li>1.2. User -a person who gets access to the services and information posted on the Site.</li>
-    <li>1.3. Website - the Company's website located on the Internet at www.einsteiners.net ,including subdomains *.einsteiners.net.</li>
+    <li>1.3. Website - the Company's website located on the Internet at www.einsteiners.us ,including subdomains *.einsteiners.us.</li>
     <li>1.4. Agreement - this Agreement between the User and the Company, which establishes the rules for using the Site, including graphic images and audiovisual products, design elements and means of individualization, text information and documentation, computer programs and files for downloading, any other works, objects and materials of the Site, as well as the terms and conditions for posting information and materials by the User in the relevant open sections of the Site.</li>
     </ul>
     <p><strong>2. General Terms and Conditions</strong></p>
@@ -53,7 +53,7 @@
         <li>• Подготовка и направление ответов на мои запросы</li>
         <li>• Направление в мой адрес информации, в том числе рекламной, о мероприятиях/товарах/услугах/работах Оператора.</li>
     </ul>
-    <p>Настоящее согласие действует до момента его отзыва путем направления соответствующего уведомления на электронный адрес info@einsteiners.net. В случае отзыва мною согласия на обработку персональных данных Оператор вправе продолжить обработку персональных данных без моего согласия при наличии оснований, указанных в пунктах 2 – 11 части 1 статьи 6, части 2 статьи 10 и части 2 статьи 11 Федерального закона №152-ФЗ «О персональных данных» от 26.06.2006 г.</p>
+    <p>Настоящее согласие действует до момента его отзыва путем направления соответствующего уведомления на электронный адрес info@einsteiners.us. В случае отзыва мною согласия на обработку персональных данных Оператор вправе продолжить обработку персональных данных без моего согласия при наличии оснований, указанных в пунктах 2 – 11 части 1 статьи 6, части 2 статьи 10 и части 2 статьи 11 Федерального закона №152-ФЗ «О персональных данных» от 26.06.2006 г.</p>
     <hr>
     <h2>Соглашение об использовании сайта</h2>
     <p><strong>Спасибо, что посетили наш проект!</strong></p>
@@ -62,7 +62,7 @@
     <ul>
         <li>1.1. Компания - Einsteiners LLC.</li>
         <li>1.2. Пользователь -лицо, получающее доступ к сервисам и информации, размещенным на Сайте.</li>
-        <li>1.3. Сайт - веб-сайт Компании, размещенный в сети Интернет по адресу www.einsteiners.net ,в том числе поддомены *.einsteiners.net.</li>
+        <li>1.3. Сайт - веб-сайт Компании, размещенный в сети Интернет по адресу www.einsteiners.us ,в том числе поддомены *.einsteiners.us.</li>
         <li>1.4. Соглашение - настоящее Соглашение между Пользователем и Компанией, устанавливающее правила использования Сайта, включая графические изображения и аудиовизуальную продукцию, элементы дизайна и средства индивидуализации, текстовую информацию и документацию, программы для ЭВМ и файлы для скачивания, любые иные произведения, объекты и материалы Сайта, а также условия и правила размещения Пользователем информации и материалов в соответствующих открытых разделах Сайта.</li>
     </ul>
     <p><strong>2. Общие положения и условия</strong></p>

@@ -2,6 +2,7 @@ FROM ubuntu:21.04
 
 ARG BUILD_REPO
 ARG BUILD_OWNER_REPO
+ARG BUILD_COMMIT_SHA=""
 ARG GIT_FOLDER=/var/www/html
 
 LABEL maintainer="Ivan Kuchin"
@@ -34,7 +35,7 @@ COPY . ${GIT_FOLDER}
 ##################
 # save commit id #
 ##################
-RUN git rev-parse HEAD > ./public/git_commit_id
+RUN echo ${BUILD_COMMIT_SHA} > ./public/git_commit_id
 
 #########################
 # composer dependencies #
@@ -55,6 +56,7 @@ RUN mkdir config_env && cp .env.example config_env/.env && ln -s config_env/.env
 # laravel dependencies #
 ########################
 RUN php artisan storage:link
+RUN php artisan livewire:publish
 RUN php artisan key:generate
 
 EXPOSE 8000

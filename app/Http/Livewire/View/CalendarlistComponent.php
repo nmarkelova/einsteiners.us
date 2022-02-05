@@ -113,7 +113,7 @@ class CalendarlistComponent extends Component
 
     public function routeNotificationForMail($notification)
     {
-        return 'info@einsteiners.net';
+        return 'info@einsteiners.us';
     }
 
     public function sand($id) {
@@ -137,7 +137,7 @@ class CalendarlistComponent extends Component
             'orderWaiver' => true,
             'orderRelease' => true,
         ];
-        Mail::to('info@einsteiners.net')->send(new Feedback($params));
+        Mail::to('info@einsteiners.us')->send(new Feedback($params));
 
         $this->resetInput();
         if (App::isLocale('ru')) {
