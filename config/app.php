@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://einsteiners.net'),
+    'url' => env('APP_URL', 'https://einsteiners.us'),
 
     'asset_url' => env('ASSET_URL', null),
 

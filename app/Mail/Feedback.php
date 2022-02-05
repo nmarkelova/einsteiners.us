@@ -28,7 +28,7 @@ class Feedback extends Mailable
      */
     public function build() {
         /*
-        return $this->from('info@einsteiners.net', 'Einsteiners Service')
+        return $this->from('info@einsteiners.us', 'Einsteiners Service')
         ->subject('Booking ' + $this->select_calendars->name)
         ->view('emails.orders.shipped')->with([
             'orderTitle' => $this->select_calendars->name,
@@ -40,6 +40,6 @@ class Feedback extends Mailable
             'orderRelease' => $this->$release,
         ]);
         */
-        return $this->from('info@einsteiners.net', 'Einsteiners Service')->markdown('emails.feedback')->with($this->params);
+        return $this->from('info@einsteiners.us', 'Einsteiners Service')->markdown('emails.feedback')->with($this->params);
     }
 }

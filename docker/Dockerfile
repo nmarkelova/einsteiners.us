@@ -56,6 +56,7 @@ RUN mkdir config_env && cp .env.example config_env/.env && ln -s config_env/.env
 # laravel dependencies #
 ########################
 RUN php artisan storage:link
+RUN php artisan livewire:publish
 RUN php artisan key:generate
 
 EXPOSE 8000
