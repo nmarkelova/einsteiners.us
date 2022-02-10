@@ -15,7 +15,7 @@ if (env('APP_ENV') === 'production') {
 | Add/Replace config .env
 |--------------------------------------------------------------------------
 
-APP_URL=https://demo.einsteiners.us
+APP_URL=https://domain
 APP_ENV=production
 
 |--------------------------------------------------------------------------
