@@ -1,6 +1,6 @@
 ---
 name: Check domainname
-on: [pull_request_target]
+on: [pull_request]
 jobs:
   build:
     name: Find substring job
