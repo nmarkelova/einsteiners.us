@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-grep -R "einsteiners.us" ./*
+grep -r "einsteiners.us" ./*
 
 if [ $? == 0 ]
   then
