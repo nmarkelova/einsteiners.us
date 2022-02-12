@@ -1,0 +1,18 @@
+---
+name: Check domainname
+on: [pull_request]
+jobs:
+  build:
+    name: Find substring job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2.3.3
+      - name: Run bash script
+        shell: bash
+        run: sh -c .github/actions/find-substring/find-substring.sh
+      - name: Create Commit Comment, if fail
+        if: ${{ failure() }}
+        uses: peter-evans/commit-comment@v1
+        with:
+          body: Domainname should not be used in source code
